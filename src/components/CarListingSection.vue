@@ -146,6 +146,13 @@
       </div>
     </div>
 
+    <!-- Car Side Panel -->
+    <CarSidePanel
+      :isOpen="showSidePanel"
+      :car="selectedCar"
+      @close="showSidePanel = false"
+    />
+
     <!-- Why Choose Us Section -->
     <div class="why-choose-section">
       <div class="why-choose-container">
@@ -200,9 +207,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
+import CarSidePanel from './CarSidePanel.vue'
 
 const selectedCategory = ref('all')
 const sortBy = ref('price-low')
@@ -210,8 +215,13 @@ const currentPage = ref(1)
 const itemsPerPage = ref(9)
 const visiblePages = ref([1, 2, 3, 4, 5])
 
+// Side Panel
+const showSidePanel = ref(false)
+const selectedCar = ref(null)
+
 const viewCarDetail = (carId) => {
-  router.push(`/car/${carId}`)
+  selectedCar.value = cars.value.find(c => c.id === carId)
+  showSidePanel.value = true
 }
 
 const categories = ref([
