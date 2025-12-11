@@ -2,32 +2,56 @@
   <div class="hero-section">
     <!-- Hero Carousel -->
     <div class="hero-carousel">
-      <div class="carousel-content">
-        <!-- Car Image Placeholder -->
-        <div class="car-image"></div>
+      <!-- Carousel Slides -->
+      <div class="carousel-slides" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+        <div
+          v-for="(slide, index) in slides"
+          :key="index"
+          class="carousel-slide"
+          :style="{ backgroundImage: `url(${slide.bg})` }"
+        >
+          <!-- Radial Gradient Overlay -->
+          <div class="slide-gradient"></div>
 
-        <!-- Hero Text -->
-        <div class="hero-text">
-          <h1 class="hero-title">
-            <span>เช่ารถกับ</span>
-            <span class="logo">asap</span>
-            <span>ราคาดีที่สุด</span>
-          </h1>
-          <p class="hero-subtitle">ราคาเริ่มต้นเพียง 2,000 ฿/วัน</p>
+          <!-- Hero Text -->
+          <div class="hero-text">
+            <div class="hero-title-row">
+              <span class="hero-title-text">เช่ารถกับ</span>
+              <img src="@/assets/images/logo.svg" alt="asap" class="hero-logo" />
+              <span class="hero-title-text">ราคาดีที่สุด</span>
+            </div>
+            <p class="hero-subtitle">ราคาเริ่มต้นเพียง 2,000 ฿/วัน</p>
+          </div>
+
+          <!-- Car Image -->
+          <img :src="slide.car" :alt="slide.alt" class="hero-car-image" />
         </div>
       </div>
 
       <!-- Navigation Arrows -->
       <button class="nav-arrow nav-prev" @click="prevSlide">
-        <svg viewBox="0 0 24 24" fill="white">
-          <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="11" fill="rgba(255,255,255,0.3)"/>
+          <path d="M14 8l-4 4 4 4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
       <button class="nav-arrow nav-next" @click="nextSlide">
-        <svg viewBox="0 0 24 24" fill="white">
-          <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="11" fill="rgba(255,255,255,0.3)"/>
+          <path d="M10 8l4 4-4 4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
+      <!-- Slide Indicators -->
+      <div class="slide-indicators">
+        <button
+          v-for="(slide, index) in slides"
+          :key="index"
+          class="indicator"
+          :class="{ active: currentSlide === index }"
+          @click="goToSlide(index)"
+        ></button>
+      </div>
     </div>
 
     <!-- Search Form -->
@@ -148,13 +172,44 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// Carousel
+// Import images
+import heroSlide1 from '@/assets/images/hero-slide-1.png'
+import heroSlide2 from '@/assets/images/hero-slide-2.png'
+import heroCar from '@/assets/images/hero-car.png'
+
+// Carousel data
+const slides = ref([
+  { bg: heroSlide1, car: heroCar, alt: 'Car 1' },
+  { bg: heroSlide2, car: heroCar, alt: 'Car 2' },
+  { bg: heroSlide1, car: heroCar, alt: 'Car 3' },
+  { bg: heroSlide2, car: heroCar, alt: 'Car 4' }
+])
+
+const currentSlide = ref(0)
+let autoSlideInterval = null
+
 const prevSlide = () => {
-  console.log('Previous slide')
+  currentSlide.value = currentSlide.value === 0 ? slides.value.length - 1 : currentSlide.value - 1
 }
 
 const nextSlide = () => {
-  console.log('Next slide')
+  currentSlide.value = currentSlide.value === slides.value.length - 1 ? 0 : currentSlide.value + 1
+}
+
+const goToSlide = (index) => {
+  currentSlide.value = index
+}
+
+const startAutoSlide = () => {
+  autoSlideInterval = setInterval(() => {
+    nextSlide()
+  }, 5000)
+}
+
+const stopAutoSlide = () => {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval)
+  }
 }
 
 // Location data
@@ -286,10 +341,12 @@ const handleClickOutside = (event) => {
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
+  startAutoSlide()
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
+  stopAutoSlide()
 })
 </script>
 
@@ -310,79 +367,93 @@ onUnmounted(() => {
   position: relative;
   overflow: hidden;
   border-bottom-left-radius: 72px;
-  background: linear-gradient(180deg, #e8f0f7 0%, #f5f8fa 100%);
   margin-top: 80px;
 }
 
-.carousel-content {
-  position: relative;
+.carousel-slides {
+  display: flex;
   width: 100%;
   height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 20px 120px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.car-image {
+.slide-gradient {
   position: absolute;
-  bottom: 80px;
+  top: -138px;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 300px;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.8) 0%, transparent 70%);
-}
-
-.car-image::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 250px;
-  background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 50%, #ffffff 100%);
-  border-radius: 20px;
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.1),
-    0 10px 30px rgba(0,0,0,0.05);
+  width: 1191px;
+  height: 536px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
 }
 
 .hero-text {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
+  padding-top: 32px;
 }
 
-.hero-title {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #161c24;
+.hero-title-row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin: 0;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
 }
 
-.hero-title .logo {
-  color: #ff595a;
+.hero-title-text {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  color: #161c24;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.5%;
+}
+
+.hero-logo {
+  height: 64px;
+  width: auto;
 }
 
 .hero-subtitle {
+  font-family: 'Sukhumvit Set', sans-serif;
   font-size: 42px;
   font-weight: 700;
   color: #161c24;
   margin: 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+}
+
+.hero-car-image {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 826px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .nav-arrow {
@@ -392,18 +463,23 @@ onUnmounted(() => {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: transparent;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s;
+  transition: all 0.3s;
   z-index: 10;
 }
 
-.nav-arrow:hover {
-  background: rgba(255, 255, 255, 0.5);
+.nav-arrow svg {
+  width: 48px;
+  height: 48px;
+}
+
+.nav-arrow:hover svg circle {
+  fill: rgba(255, 255, 255, 0.5);
 }
 
 .nav-prev {
@@ -412,6 +488,32 @@ onUnmounted(() => {
 
 .nav-next {
   right: 64px;
+}
+
+.slide-indicators {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.indicator.active {
+  background: #ff595a;
+  width: 24px;
+  border-radius: 4px;
 }
 
 .search-container {

@@ -3,7 +3,7 @@
     <div class="image-container">
       <!-- Main Image -->
       <img
-        src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1600&h=800&fit=crop"
+        :src="aboutHeroImage"
         alt="ASAP Car Rental Experience"
         class="main-image"
       />
@@ -20,6 +20,8 @@
 </template>
 
 <script setup>
+import aboutHeroImage from '@/assets/images/about-hero-image.png'
+
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,

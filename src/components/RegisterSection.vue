@@ -263,8 +263,8 @@ const handleRegister = () => {
 
 <style scoped>
 .register-section {
-  background: #F9FAFB;
-  padding: 100px 0;
+  background: white;
+  padding: 80px 0;
   width: 100%;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -272,26 +272,27 @@ const handleRegister = () => {
 }
 
 .register-container {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
 }
 
 .register-card {
-  background: white;
-  border-radius: 24px;
-  padding: 48px;
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .register-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  color: #161c24;
+  font-size: 42px;
+  color: #000;
   text-align: center;
-  margin: 0 0 32px 0;
+  margin: 0;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 .error-alert {
@@ -425,12 +426,12 @@ const handleRegister = () => {
 
 .register-button {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  padding: 16px;
+  background: #FF595A;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   color: white;
   cursor: pointer;
@@ -439,12 +440,13 @@ const handleRegister = () => {
 }
 
 .register-button:hover:not(:disabled) {
+  background: #E54E4F;
   transform: translateY(-2px);
-  box-shadow: 0px 8px 24px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .register-button:disabled {
-  opacity: 0.5;
+  background: #919EAB;
   cursor: not-allowed;
 }
 
@@ -471,28 +473,28 @@ const handleRegister = () => {
 .social-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 16px;
 }
 
 .social-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px;
+  gap: 12px;
+  padding: 16px 24px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 16px;
   background: white;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: #637381;
+  font-weight: 700;
+  font-size: 16px;
+  color: #161C24;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .social-button:hover {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
   transform: translateY(-2px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -501,14 +503,14 @@ const handleRegister = () => {
   text-align: center;
   margin-top: 24px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  color: #637381;
+  font-size: 16px;
+  color: #212B36;
 }
 
 .link {
-  color: #FF6B6B;
+  color: #FF595A;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   margin-left: 4px;
 }
 

@@ -5,15 +5,7 @@
 
       <div class="privacy-content">
         <p class="intro-text">
-          บริษัท เอแซ็ป จำกัด ("บริษัท") ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของท่าน
-          และเพื่อให้ท่านมั่นใจได้ว่าข้อมูลส่วนบุคคลของท่านจะได้รับการดูแลเป็นอย่างดี
-          บริษัทจึงได้จัดทำนโยบายความเป็นส่วนตัวฉบับนี้ขึ้นเพื่ออธิบายแนวทางปฏิบัติในการเก็บรวบรวม ใช้
-          และเปิดเผยข้อมูลส่วนบุคคลของท่าน รวมถึงสิทธิต่างๆ ที่ท่านมีภายใต้กฎหมายคุ้มครองข้อมูลส่วนบุคคล
-        </p>
-
-        <p class="intro-text">
-          นโยบายความเป็นส่วนตัวฉบับนี้ใช้บังคับกับการเก็บรวบรวม ใช้ และเปิดเผยข้อมูลส่วนบุคคลของท่านผ่านการใช้บริการต่างๆ
-          ของบริษัท ไม่ว่าจะเป็นการเช่ารถ การจองรถออนไลน์ผ่านเว็บไซต์ แอปพลิเคชัน หรือช่องทางอื่นใด
+          บริษัท ซินเนอร์เจติค ออโต้ เพอร์ฟอร์มานซ์ จำกัด (มหาชน) หนึ่งในผู้นำด้านบริการให้เช่ารถยนต์ ภายใต้ชื่อ แบรนด์ asap Car Rent ("บริษัท") ยึดมั่นในการดำเนินธุรกิจอย่างมีจรรยาบรรณ เคารพและปฏิบัติตามกฎหมายที่บังคับใช้ และตระหนักถึงความไว้วางใจที่ท่านมอบให้ในการใช้ผลิตภัณฑ์และบริการของบริษัท ดังนั้น บริษัทจึงให้ความสำคัญกับการเคารพในความเป็นส่วนตัวของท่านและการรักษาความปลอดภัยของข้อมูลส่วนบุคคลของท่าน โดยได้กำหนดนโยบาย ระเบียบ และหลักเกณฑ์ต่างๆ ในการดำเนินงานของบริษัท ด้วยมาตรการที่เข้มงวดในการรักษาความปลอดภัยของข้อมูลส่วนบุคคล เพื่อให้ท่านมั่นใจได้ว่าข้อมูลส่วนบุคคลของท่านที่บริษัทได้รับจะถูกนำไปใช้ตรงตามความต้องการของท่านและถูกต้องตามกฎหมาย
         </p>
 
         <div class="section">
@@ -159,15 +151,15 @@
         </div>
 
         <div class="section">
-          <h2 class="section-title">10. ติดต่อเรา</h2>
+          <h2 class="section-title">10. รายละเอียดการติดต่อ</h2>
           <p>
-            หากท่านมีคำถาม ข้อสงสัย หรือต้องการใช้สิทธิของท่านเกี่ยวกับข้อมูลส่วนบุคคล กรุณาติดต่อบริษัทผ่านช่องทางดังต่อไปนี้:
+            ในกรณีที่มีข้อสงสัยหรือต้องการสอบถามรายละเอียดเพิ่มเติมเกี่ยวกับการคุ้มครองข้อมูลส่วนบุคคลของท่าน การเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลของท่าน การใช้สิทธิของท่าน การเพิกถอนความยินยอม หรือมีข้อร้องเรียนใด ๆ ท่านสามารถติดต่อบริษัทได้ตามช่องทางดังต่อไปนี้
           </p>
           <div class="contact-info">
-            <p><strong>บริษัท เอแซ็ป จำกัด</strong></p>
-            <p>อีเมล: <a href="mailto:privacy@asap.co.th">privacy@asap.co.th</a></p>
-            <p>โทรศัพท์: <a href="tel:021234567">02-123-4567</a></p>
-            <p>ที่อยู่: 123 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพฯ 10110</p>
+            <p><strong>บริษัท ซินเนอร์เจติค ออโต้ เพอร์ฟอร์มานซ์ จำกัด (มหาชน)</strong></p>
+            <p>149 หมู่ 3 ถนนเทพารักษ์ ตำบลเทพารักษ์ อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ 10270</p>
+            <p>โทรศัพท์: <a href="tel:+6620918000">+66 (0)2 091 8000</a></p>
+            <p>Email: <a href="mailto:otareservation@asapcarrent.com">otareservation@asapcarrent.com</a></p>
           </div>
         </div>
 
@@ -194,7 +186,7 @@
 <style scoped>
 .privacy-policy-section {
   background: #FFFFFF;
-  padding: 120px 0 80px 0;
+  padding: 80px 0;
   min-height: 100vh;
 }
 
@@ -207,9 +199,9 @@
 .privacy-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 40px;
-  color: #161c24;
-  text-align: center;
+  font-size: 42px;
+  color: #000;
+  text-align: left;
   margin: 0 0 48px 0;
 }
 
@@ -219,43 +211,41 @@
 
 .intro-text {
   font-size: 16px;
-  color: #637381;
+  color: #212B36;
   line-height: 1.8;
   margin: 0 0 24px 0;
-  text-align: justify;
 }
 
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .section-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  color: #161c24;
-  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #212B36;
+  margin: 0 0 12px 0;
 }
 
 .subsection {
-  margin: 24px 0;
+  margin: 16px 0;
 }
 
 .subsection h3 {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #161c24;
-  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: #212B36;
+  margin: 0 0 8px 0;
 }
 
 .section p,
 .subsection p {
-  font-size: 15px;
-  color: #637381;
+  font-size: 16px;
+  color: #212B36;
   line-height: 1.8;
   margin: 0 0 16px 0;
-  text-align: justify;
 }
 
 .section ul {
@@ -265,28 +255,27 @@
 
 .section li,
 .subsection li {
-  font-size: 15px;
-  color: #637381;
+  font-size: 16px;
+  color: #212B36;
   line-height: 1.8;
   margin-bottom: 12px;
-  text-align: justify;
 }
 
 .section li strong {
-  color: #161c24;
-  font-weight: 600;
+  color: #212B36;
+  font-weight: 700;
 }
 
 .contact-info {
-  background: #F9FAFB;
+  background: #F4F6F8;
   padding: 24px;
   border-radius: 12px;
   margin-top: 16px;
 }
 
 .contact-info p {
-  font-size: 15px;
-  color: #637381;
+  font-size: 16px;
+  color: #212B36;
   line-height: 1.8;
   margin: 0 0 8px 0;
 }
@@ -296,7 +285,7 @@
 }
 
 .contact-info a {
-  color: #FF6B6B;
+  color: #FF595A;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -307,17 +296,17 @@
 }
 
 .effective-date {
-  font-size: 15px;
-  color: #161c24;
+  font-size: 16px;
+  color: #212B36;
   margin-top: 40px;
   padding-top: 24px;
-  border-top: 1px solid #E5E7EB;
-  text-align: center;
+  border-top: 1px solid #DFE3E8;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
   .privacy-policy-section {
-    padding: 100px 0 60px 0;
+    padding: 80px 0 60px 0;
   }
 
   .privacy-container {
@@ -325,16 +314,16 @@
   }
 
   .privacy-title {
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 32px;
   }
 
   .section-title {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .subsection h3 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .intro-text,
@@ -342,7 +331,7 @@
   .section li,
   .subsection p,
   .subsection li {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .contact-info {

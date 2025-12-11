@@ -175,8 +175,8 @@ const articles = ref([
 
 <style scoped>
 .articles-section {
-  background: #F9FAFB;
-  padding: 120px 0 80px 0;
+  background: white;
+  padding: 80px 0;
   min-height: 100vh;
 }
 
@@ -189,9 +189,9 @@ const articles = ref([
 .articles-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 40px;
-  color: #161c24;
-  text-align: center;
+  font-size: 42px;
+  color: #000;
+  text-align: left;
   margin: 0 0 48px 0;
 }
 
@@ -208,11 +208,11 @@ const articles = ref([
 
 .search-input {
   width: 100%;
-  padding: 12px 40px 12px 16px;
+  padding: 14px 44px 14px 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #161c24;
   outline: none;
   transition: border-color 0.2s;
@@ -220,7 +220,7 @@ const articles = ref([
 }
 
 .search-input:focus {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .search-input::placeholder {
@@ -237,40 +237,42 @@ const articles = ref([
 
 .dropdown {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 2px;
   background: white;
-  padding: 12px 16px;
+  padding: 8px 16px 10px 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
   min-width: 220px;
 }
 
 .dropdown-label {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   color: #919EAB;
   white-space: nowrap;
 }
 
 .dropdown-select {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   color: #161c24;
   border: none;
   outline: none;
   background: transparent;
   cursor: pointer;
   appearance: none;
-  padding-right: 20px;
-  flex: 1;
+  padding-right: 24px;
+  width: 100%;
 }
 
 .dropdown-icon {
   position: absolute;
   right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   pointer-events: none;
 }
 
@@ -283,9 +285,9 @@ const articles = ref([
 
 .article-card {
   background: white;
-  border-radius: 16px;
+  border: 1px solid #DFE3E8;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   text-decoration: none;
   display: block;
@@ -301,6 +303,7 @@ const articles = ref([
   aspect-ratio: 3/2;
   background: #F4F6F8;
   overflow: hidden;
+  border-radius: 24px 24px 0 0;
 }
 
 .article-image img {
@@ -316,22 +319,19 @@ const articles = ref([
 .article-category {
   display: inline-block;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: #FF6B6B;
-  background: #FFE4E6;
-  padding: 4px 12px;
-  border-radius: 4px;
-  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FF595A;
+  margin-bottom: 8px;
 }
 
 .article-title {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: #161c24;
   margin: 0 0 12px 0;
-  line-height: 1.5;
+  line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -343,7 +343,7 @@ const articles = ref([
   align-items: center;
   gap: 6px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: #919EAB;
 }
 
@@ -369,8 +369,8 @@ const articles = ref([
 }
 
 .page-arrow:hover:not(:disabled) {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .page-arrow:disabled {
@@ -396,13 +396,13 @@ const articles = ref([
 }
 
 .page-number:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .page-number.active {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  border-color: #FF6B6B;
+  background: #FF595A;
+  border-color: #FF595A;
   color: white;
 }
 
@@ -421,11 +421,11 @@ const articles = ref([
 
 @media (max-width: 768px) {
   .articles-section {
-    padding: 100px 0 60px 0;
+    padding: 80px 0 60px 0;
   }
 
   .articles-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .filters-row {

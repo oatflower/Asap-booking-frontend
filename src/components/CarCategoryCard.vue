@@ -6,15 +6,26 @@
     </div>
     <div class="card-body">
       <div class="car-image">
-        <!-- Placeholder for car image -->
-        <div class="car-placeholder"></div>
+        <img :src="carImage" :alt="categoryName" class="car-img" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+// Import car images
+import carEconomy from '@/assets/images/car-economy.svg'
+import carCompact from '@/assets/images/car-compact.svg'
+import carSedan from '@/assets/images/car-sedan.svg'
+import carSuv from '@/assets/images/car-suv.svg'
+import carPickup from '@/assets/images/car-pickup.svg'
+import carVan from '@/assets/images/car-van.svg'
+import carLuxury from '@/assets/images/car-luxury.svg'
+import carEv from '@/assets/images/car-ev.svg'
+
+const props = defineProps({
   modelCount: {
     type: Number,
     default: 1
@@ -22,7 +33,26 @@ defineProps({
   categoryName: {
     type: String,
     default: 'Economy'
+  },
+  carType: {
+    type: String,
+    default: 'economy'
   }
+})
+
+const carImages = {
+  economy: carEconomy,
+  compact: carCompact,
+  sedan: carSedan,
+  suv: carSuv,
+  pickup: carPickup,
+  van: carVan,
+  luxury: carLuxury,
+  ev: carEv
+}
+
+const carImage = computed(() => {
+  return carImages[props.carType] || carEconomy
 })
 </script>
 
@@ -83,32 +113,17 @@ defineProps({
 
 .car-image {
   width: 100%;
-  height: 123px;
+  height: 139px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.car-placeholder {
+.car-img {
   width: 255px;
-  height: 100%;
-  background: linear-gradient(135deg, #d0d0d0 0%, #e8e8e8 50%, #ffffff 100%);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.car-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 60%;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  height: 139px;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {

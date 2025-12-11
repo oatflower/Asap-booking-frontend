@@ -3,26 +3,12 @@
     <div class="rental-container">
       <!-- Left Column: Images -->
       <div class="left-column">
-        <div class="image-grid">
-          <div class="image-wrapper left-image">
-            <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=800&fit=crop"
-              alt="Car Rental Counter"
-              class="rental-image"
-            />
-          </div>
-          <div class="image-wrapper right-image">
-            <img
-              src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=800&fit=crop"
-              alt="Driving Experience"
-              class="rental-image"
-            />
-            <div class="overlay-text">
-              <p class="overlay-line">Get there ASAP,</p>
-              <p class="overlay-line">Use ASAP.</p>
-              <p class="overlay-line location">Don Muang</p>
-            </div>
-          </div>
+        <div class="image-wrapper">
+          <img
+            :src="aboutRentalImages"
+            alt="Car Rental Service"
+            class="rental-image"
+          />
         </div>
       </div>
 
@@ -35,7 +21,7 @@
         </p>
 
         <p class="sub-description">
-          พร้อมกับงานมืออาชีพที่มุ่งเน้นการบริการด้วยใจ มั่นใจได้กับการดูแลช่วยเหลือตลอด 24 ชั่วโมง จากทีมงานมืออาชีพ พร้อมบริการประกันภัยรถยนต์ที่ครอบคลุมทุกการเดินทาง เพื่อให้คุ้มใจในแต่ละจดหมายในทุกเส้นทาง
+          พร้อมทีมงานมืออาชีพที่มุ่งเน้นการบริการด้วยใจ มั่นใจได้กับการดูแลช่วยเหลือตลอด 24 ชั่วโมง จากทีมงานมืออาชีพ พร้อมบริการประกันภัยรถยนต์ที่ครอบคลุมทุกการเดินทาง เพื่อให้อุ่นใจและปลอดภัยในทุกเส้นทาง
         </p>
       </div>
     </div>
@@ -43,6 +29,7 @@
 </template>
 
 <script setup>
+import aboutRentalImages from '@/assets/images/about-rental-images.png'
 </script>
 
 <style scoped>
@@ -67,60 +54,17 @@
   width: 100%;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 100%;
-}
-
 .image-wrapper {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  aspect-ratio: 3/4;
 }
 
 .rental-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-}
-
-.left-image {
-  border-radius: 24px 0 0 24px;
-}
-
-.right-image {
-  border-radius: 0 24px 24px 0;
-}
-
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-  background: rgba(139, 115, 185, 0.9);
-  padding: 32px 24px;
-  border-radius: 16px;
-  width: 85%;
-}
-
-.overlay-line {
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: white;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.overlay-line.location {
-  margin-top: 8px;
-  font-size: 18px;
+  border-radius: 24px;
 }
 
 /* Right Column - Content */

@@ -94,8 +94,8 @@ onUnmounted(() => {
 
 <style scoped>
 .verification-section {
-  background: #F9FAFB;
-  padding: 100px 0;
+  background: white;
+  padding: 80px 0;
   width: 100%;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -110,40 +110,38 @@ onUnmounted(() => {
 }
 
 .verification-card {
-  background: white;
-  border-radius: 24px;
-  padding: 60px 48px;
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 24px;
 }
 
 .icon-wrapper {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .mail-icon {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
 }
 
 .verification-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  color: #161c24;
-  margin: 0 0 16px 0;
+  font-size: 42px;
+  color: #000;
+  margin: 0;
+  line-height: 1.587;
 }
 
 .verification-description {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: #637381;
-  margin: 0 0 32px 0;
-  line-height: 1.6;
+  color: #000;
+  margin: 0;
+  line-height: 1.587;
 }
 
 .email-display {

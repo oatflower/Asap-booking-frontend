@@ -192,8 +192,8 @@ const useCoupon = (code) => {
 
 <style scoped>
 .promotions-section {
-  background: #F9FAFB;
-  padding: 120px 0 80px 0;
+  background: white;
+  padding: 80px 0;
   min-height: 100vh;
 }
 
@@ -206,10 +206,11 @@ const useCoupon = (code) => {
 .promotions-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 40px;
-  color: #161c24;
-  text-align: center;
-  margin: 0 0 48px 0;
+  font-size: 42px;
+  color: #000;
+  text-align: left;
+  margin: 0 0 32px 0;
+  line-height: 1.587;
 }
 
 .filter-bar {
@@ -236,11 +237,11 @@ const useCoupon = (code) => {
 
 .search-input {
   width: 100%;
-  padding: 12px 16px 12px 44px;
+  padding: 14px 16px 14px 44px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #161c24;
   outline: none;
   transition: border-color 0.2s;
@@ -248,7 +249,7 @@ const useCoupon = (code) => {
 }
 
 .search-input:focus {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .search-input::placeholder {
@@ -260,30 +261,35 @@ const useCoupon = (code) => {
   align-items: center;
   gap: 8px;
   background: white;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
 }
 
 .sort-label {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  color: #919EAB;
+  font-size: 12px;
+  color: #FF595A;
   white-space: nowrap;
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: white;
+  padding: 0 4px;
 }
 
 .sort-select {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   color: #161c24;
   border: none;
   outline: none;
   background: transparent;
   cursor: pointer;
   appearance: none;
-  padding-right: 20px;
+  padding-right: 24px;
 }
 
 .dropdown-icon {
@@ -303,13 +309,13 @@ const useCoupon = (code) => {
   background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #DFE3E8;
   transition: all 0.3s ease;
 }
 
 .promo-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .promo-image {
@@ -419,10 +425,10 @@ const useCoupon = (code) => {
 
 .promo-title {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #161c24;
-  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 12px 0;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -439,7 +445,7 @@ const useCoupon = (code) => {
 
 .promo-expiry span {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   color: #919EAB;
 }
 
@@ -453,26 +459,29 @@ const useCoupon = (code) => {
 .coupon-code {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex: 1;
+  background: #F4F6F8;
+  padding: 10px 12px;
+  border-radius: 12px;
 }
 
 .code-text {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   color: #637381;
 }
 
 .use-coupon-btn {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  background: #FF595A;
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
+  border-radius: 12px;
+  padding: 10px 20px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
@@ -480,7 +489,7 @@ const useCoupon = (code) => {
 
 .use-coupon-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 4px 12px rgba(255, 89, 90, 0.3);
 }
 
 .pagination {
@@ -505,8 +514,8 @@ const useCoupon = (code) => {
 }
 
 .page-arrow:hover:not(:disabled) {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .page-arrow:disabled {
@@ -532,13 +541,13 @@ const useCoupon = (code) => {
 }
 
 .page-number:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .page-number.active {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  border-color: #FF6B6B;
+  background: #FF595A;
+  border-color: #FF595A;
   color: white;
 }
 
@@ -557,11 +566,11 @@ const useCoupon = (code) => {
 
 @media (max-width: 768px) {
   .promotions-section {
-    padding: 100px 0 60px 0;
+    padding: 80px 0 60px 0;
   }
 
   .promotions-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .filter-bar {
@@ -576,6 +585,14 @@ const useCoupon = (code) => {
   .promotions-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  .promo-title {
+    font-size: 16px;
+  }
+
+  .promo-expiry span {
+    font-size: 14px;
   }
 }
 

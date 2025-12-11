@@ -649,15 +649,15 @@ const formatCurrency = (amount) => {
 /* Left Column */
 .left-column {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 24px;
 }
 
 .car-title {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: #161c24;
+  color: #000;
   margin: 0 0 8px 0;
 }
 
@@ -698,7 +698,7 @@ const formatCurrency = (amount) => {
   position: absolute;
   bottom: 12px;
   left: 12px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  background: #FF595A;
   color: white;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 12px;
@@ -721,7 +721,7 @@ const formatCurrency = (amount) => {
 }
 
 .dot.active {
-  background: #FF6B6B;
+  background: #FF595A;
 }
 
 .car-specs {
@@ -792,7 +792,7 @@ const formatCurrency = (amount) => {
 .insurance-section,
 .services-section {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 24px;
 }
 
@@ -831,17 +831,17 @@ const formatCurrency = (amount) => {
   gap: 12px;
   padding: 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .insurance-option:hover {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .insurance-option.active {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
   background: #FFF4F3;
 }
 
@@ -857,13 +857,13 @@ const formatCurrency = (amount) => {
 }
 
 .insurance-option.active .option-radio {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .radio-dot {
   width: 10px;
   height: 10px;
-  background: #FF6B6B;
+  background: #FF595A;
   border-radius: 50%;
 }
 
@@ -908,11 +908,11 @@ const formatCurrency = (amount) => {
   padding: 12px;
   background: white;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  color: #161c24;
+  font-weight: 700;
+  color: #000;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -922,8 +922,8 @@ const formatCurrency = (amount) => {
 }
 
 .view-more-button:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .section-header-row {
@@ -939,12 +939,12 @@ const formatCurrency = (amount) => {
   gap: 6px;
   padding: 8px 16px;
   background: white;
-  border: 1px solid #FF6B6B;
-  border-radius: 8px;
+  border: 1px solid #FF595A;
+  border-radius: 12px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #FF6B6B;
+  color: #FF595A;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -1003,7 +1003,7 @@ const formatCurrency = (amount) => {
   height: 32px;
   background: #F9FAFB;
   border: 1px solid #DFE3E8;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
   display: flex;
@@ -1021,10 +1021,14 @@ const formatCurrency = (amount) => {
   height: 32px;
   text-align: center;
   border: 1px solid #DFE3E8;
-  border-radius: 6px;
+  border-radius: 12px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
+}
+
+.qty-input:focus {
+  border-color: #FF595A;
 }
 
 /* Right Column */
@@ -1036,7 +1040,7 @@ const formatCurrency = (amount) => {
 
 .summary-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 24px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
 }
@@ -1062,12 +1066,12 @@ const formatCurrency = (amount) => {
   gap: 6px;
   padding: 6px 12px;
   background: white;
-  border: 1px solid #FF6B6B;
-  border-radius: 6px;
+  border: 1px solid #FF595A;
+  border-radius: 12px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #FF6B6B;
+  color: #FF595A;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -1086,7 +1090,7 @@ const formatCurrency = (amount) => {
 .summary-section {
   padding: 16px;
   background: #F9FAFB;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .summary-row {
@@ -1134,7 +1138,7 @@ const formatCurrency = (amount) => {
 }
 
 .summary-amount.total {
-  color: #4CAF50;
+  color: #36B37E;
 }
 
 .summary-details {
@@ -1174,18 +1178,18 @@ const formatCurrency = (amount) => {
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: #FF6B6B;
+  color: #FF595A;
 }
 
 .rent-button {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  padding: 16px;
+  background: #FF595A;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   color: white;
   cursor: pointer;
   display: flex;
@@ -1193,13 +1197,13 @@ const formatCurrency = (amount) => {
   justify-content: center;
   gap: 8px;
   transition: all 0.3s;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 4px 12px rgba(255, 89, 90, 0.3);
   margin-bottom: 20px;
 }
 
 .rent-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 6px 16px rgba(255, 107, 107, 0.4);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .card-info {
@@ -1207,7 +1211,7 @@ const formatCurrency = (amount) => {
   gap: 12px;
   padding: 16px;
   background: #F9FAFB;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .info-text {
@@ -1298,7 +1302,7 @@ const formatCurrency = (amount) => {
 
 .modal-service-item {
   padding: 16px;
-  border: 1px solid #F4F6F8;
+  border: 1px solid #DFE3E8;
   border-radius: 12px;
   margin-bottom: 12px;
 }
@@ -1316,13 +1320,13 @@ const formatCurrency = (amount) => {
 
 .confirm-button {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  padding: 16px;
+  background: #FF595A;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   color: white;
   cursor: pointer;
   transition: all 0.3s;
@@ -1330,7 +1334,7 @@ const formatCurrency = (amount) => {
 
 .confirm-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 /* Insurance Comparison Modal */

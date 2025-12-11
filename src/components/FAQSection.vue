@@ -25,9 +25,10 @@
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  :class="['toggle-icon', { rotated: item.isOpen }]"
+                  class="toggle-icon"
                 >
-                  <path d="M6 8l4 4 4-4" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path v-if="item.isOpen" d="M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
+                  <path v-else d="M10 4v12M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
               <div v-if="item.isOpen" class="faq-answer">
@@ -59,9 +60,10 @@
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  :class="['toggle-icon', { rotated: item.isOpen }]"
+                  class="toggle-icon"
                 >
-                  <path d="M6 8l4 4 4-4" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path v-if="item.isOpen" d="M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
+                  <path v-else d="M10 4v12M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
               <div v-if="item.isOpen" class="faq-answer">
@@ -93,9 +95,10 @@
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  :class="['toggle-icon', { rotated: item.isOpen }]"
+                  class="toggle-icon"
                 >
-                  <path d="M6 8l4 4 4-4" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path v-if="item.isOpen" d="M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
+                  <path v-else d="M10 4v12M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
               <div v-if="item.isOpen" class="faq-answer">
@@ -127,9 +130,10 @@
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  :class="['toggle-icon', { rotated: item.isOpen }]"
+                  class="toggle-icon"
                 >
-                  <path d="M6 8l4 4 4-4" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path v-if="item.isOpen" d="M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
+                  <path v-else d="M10 4v12M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
               <div v-if="item.isOpen" class="faq-answer">
@@ -161,9 +165,10 @@
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  :class="['toggle-icon', { rotated: item.isOpen }]"
+                  class="toggle-icon"
                 >
-                  <path d="M6 8l4 4 4-4" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path v-if="item.isOpen" d="M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
+                  <path v-else d="M10 4v12M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
               <div v-if="item.isOpen" class="faq-answer">
@@ -195,9 +200,10 @@
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  :class="['toggle-icon', { rotated: item.isOpen }]"
+                  class="toggle-icon"
                 >
-                  <path d="M6 8l4 4 4-4" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path v-if="item.isOpen" d="M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
+                  <path v-else d="M10 4v12M4 10h12" stroke="#161C24" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
               <div v-if="item.isOpen" class="faq-answer">
@@ -344,13 +350,13 @@ const toggleItem = (category, index) => {
 
 <style scoped>
 .faq-section {
-  background: #F9FAFB;
-  padding: 120px 0 80px 0;
+  background: white;
+  padding: 80px 0;
   min-height: 100vh;
 }
 
 .faq-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -358,43 +364,60 @@ const toggleItem = (category, index) => {
 .faq-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 40px;
-  color: #161c24;
-  text-align: center;
-  margin: 0 0 64px 0;
+  font-size: 42px;
+  color: #000;
+  text-align: left;
+  margin: 0 0 48px 0;
 }
 
 .faq-categories {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 0;
+  background: white;
+  border: 1px solid #DFE3E8;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .faq-category {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
+  padding: 24px;
+  border-bottom: 1px solid #DFE3E8;
+}
+
+.faq-category:last-child {
+  border-bottom: none;
 }
 
 .category-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  color: #161c24;
-  margin: 0;
+  font-size: 28px;
+  color: #000;
+  margin: 0 0 16px 0;
 }
 
 .faq-items {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
 }
 
 .faq-item {
   background: white;
-  border-radius: 12px;
+  border: 1px solid #DFE3E8;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.faq-item:first-child {
+  border-top: none;
 }
 
 .faq-question {
@@ -402,37 +425,34 @@ const toggleItem = (category, index) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
+  padding: 16px 0;
   background: white;
   border: none;
   cursor: pointer;
   transition: all 0.2s;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
-  font-weight: 500;
-  color: #161c24;
+  font-weight: 400;
+  color: #000;
   text-align: left;
 }
 
 .faq-question:hover {
-  background: #F9FAFB;
+  color: #FF595A;
 }
 
 .faq-question.active {
-  color: #FF6B6B;
+  font-weight: 700;
+  color: #000;
 }
 
 .toggle-icon {
   flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.toggle-icon.rotated {
-  transform: rotate(180deg);
 }
 
 .faq-answer {
-  padding: 0 24px 24px 24px;
+  padding: 0 0 16px 0;
+  border-top: 1px solid #DFE3E8;
   animation: slideDown 0.3s ease;
 }
 
@@ -449,41 +469,47 @@ const toggleItem = (category, index) => {
 
 .faq-answer p {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #637381;
-  line-height: 1.8;
-  margin: 0 0 16px 0;
+  line-height: 1.6;
+  margin: 16px 0 0 0;
 }
 
-.faq-answer p:last-child {
-  margin-bottom: 0;
+.faq-answer p:first-child {
+  margin-top: 16px;
 }
 
 @media (max-width: 768px) {
   .faq-section {
-    padding: 100px 0 60px 0;
+    padding: 80px 0 60px 0;
   }
 
   .faq-title {
-    font-size: 32px;
-    margin-bottom: 48px;
+    font-size: 26px;
+    margin-bottom: 32px;
+  }
+
+  .faq-category {
+    padding: 20px;
   }
 
   .category-title {
     font-size: 20px;
+    margin-bottom: 12px;
   }
 
   .faq-question {
-    padding: 16px 20px;
+    padding: 14px 0;
     font-size: 15px;
   }
 
   .faq-answer {
-    padding: 0 20px 20px 20px;
+    padding: 0 0 14px 0;
   }
 
   .faq-answer p {
-    font-size: 14px;
+    font-size: 15px;
+    margin-top: 14px;
   }
 }
 </style>

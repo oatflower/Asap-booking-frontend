@@ -166,8 +166,8 @@ const handleLogin = () => {
 
 <style scoped>
 .login-section {
-  background: #F9FAFB;
-  padding: 100px 0;
+  background: white;
+  padding: 80px 0;
   width: 100%;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -182,19 +182,20 @@ const handleLogin = () => {
 }
 
 .login-card {
-  background: white;
-  border-radius: 24px;
-  padding: 48px;
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
 }
 
 .login-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  color: #161c24;
-  text-align: center;
-  margin: 0 0 32px 0;
+  font-size: 42px;
+  color: #000;
+  margin: 0;
+  line-height: 1.587;
 }
 
 .error-alert {
@@ -203,13 +204,14 @@ const handleLogin = () => {
   gap: 12px;
   padding: 14px 16px;
   background: #FFF4E6;
-  border-left: 4px solid #FF6B6B;
+  border-left: 4px solid #FF595A;
   border-radius: 8px;
-  margin-bottom: 24px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 14px;
   color: #B76E00;
   line-height: 1.5;
+  width: 100%;
+  text-align: left;
 }
 
 .alert-icon {
@@ -221,6 +223,7 @@ const handleLogin = () => {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 .form-group {
@@ -273,7 +276,7 @@ const handleLogin = () => {
 }
 
 .form-input:focus {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .form-input.error {
@@ -312,18 +315,18 @@ const handleLogin = () => {
 }
 
 .forgot-link:hover {
-  color: #FF6B6B;
+  color: #FF595A;
   text-decoration: underline;
 }
 
 .login-button {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  padding: 16px 32px;
+  background: #FF595A;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   color: white;
   cursor: pointer;
@@ -333,11 +336,11 @@ const handleLogin = () => {
 
 .login-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 24px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .login-button:disabled {
-  opacity: 0.5;
+  background: #919EAB;
   cursor: not-allowed;
 }
 
@@ -345,7 +348,7 @@ const handleLogin = () => {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 24px 0;
+  width: 100%;
 }
 
 .divider-line {
@@ -365,6 +368,7 @@ const handleLogin = () => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  width: 100%;
 }
 
 .social-button {
@@ -372,34 +376,32 @@ const handleLogin = () => {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px;
+  padding: 14px 24px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 16px;
   background: white;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: #637381;
+  font-weight: 700;
+  font-size: 16px;
+  color: #161C24;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .social-button:hover {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
   transform: translateY(-2px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .register-link {
-  text-align: center;
-  margin-top: 24px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 14px;
   color: #637381;
 }
 
 .link {
-  color: #FF6B6B;
+  color: #FF595A;
   text-decoration: none;
   font-weight: 600;
   margin-left: 4px;
@@ -415,11 +417,11 @@ const handleLogin = () => {
   }
 
   .login-card {
-    padding: 32px 24px;
+    padding: 48px 24px;
   }
 
   .login-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .social-buttons {

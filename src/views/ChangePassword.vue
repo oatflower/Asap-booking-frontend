@@ -277,10 +277,10 @@ const goHome = () => {
 .page-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 28px;
-  color: #161c24;
+  font-size: 42px;
+  color: #000;
   margin: 0 0 32px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .form-group {
@@ -304,11 +304,11 @@ const goHome = () => {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   color: #161c24;
   padding: 14px 48px 14px 48px;
-  border: 1.5px solid #DFE3E8;
-  border-radius: 8px;
+  border: 1px solid #DFE3E8;
+  border-radius: 12px;
   background: white;
   transition: all 0.2s;
   box-sizing: border-box;
@@ -316,12 +316,12 @@ const goHome = () => {
 
 .password-input:focus {
   outline: none;
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .password-input.error {
-  border-color: #FF6B6B;
-  background: #FFF5F5;
+  border-color: #FF3B30;
+  background: white;
 }
 
 .password-input::placeholder {
@@ -354,7 +354,7 @@ const goHome = () => {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #FF6B6B;
+  color: #FF3B30;
   margin: 8px 0 0 0;
 }
 
@@ -362,15 +362,16 @@ const goHome = () => {
   display: block;
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   color: #919EAB;
-  text-decoration: underline;
-  margin-top: 8px;
+  text-decoration: none;
+  margin-top: 12px;
   text-align: right;
 }
 
 .forgot-link:hover {
-  color: #637381;
+  color: #FF595A;
+  text-decoration: underline;
 }
 
 .requirements-list {
@@ -397,27 +398,25 @@ const goHome = () => {
 .submit-button {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  padding: 14px 32px;
+  background: #FF595A;
+  padding: 16px 32px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.2);
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .submit-button:hover:not(.disabled) {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .submit-button.disabled {
-  background: #E5E7EB;
-  box-shadow: none;
+  background: #919EAB;
   cursor: not-allowed;
 }
 
@@ -440,7 +439,7 @@ const goHome = () => {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
   font-size: 28px;
-  color: #161c24;
+  color: #000;
   margin: 0 0 12px 0;
 }
 
@@ -455,21 +454,20 @@ const goHome = () => {
 .home-button {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  padding: 14px 32px;
+  background: #FF595A;
+  padding: 16px 32px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.2);
 }
 
 .home-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -482,7 +480,10 @@ const goHome = () => {
     padding: 32px 24px;
   }
 
-  .page-title,
+  .page-title {
+    font-size: 26px;
+  }
+
   .success-title {
     font-size: 24px;
   }

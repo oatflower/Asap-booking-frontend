@@ -266,19 +266,19 @@ const goToLogin = () => {
 .page-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 28px;
-  color: #161c24;
+  font-size: 42px;
+  color: #000;
   margin: 0 0 8px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .page-subtitle {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 15px;
-  color: #919EAB;
+  font-size: 16px;
+  color: #212B36;
   margin: 0 0 32px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .form-group {
@@ -303,11 +303,11 @@ const goToLogin = () => {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   color: #161c24;
   padding: 14px 48px 14px 48px;
-  border: 1.5px solid #DFE3E8;
-  border-radius: 8px;
+  border: 1px solid #DFE3E8;
+  border-radius: 12px;
   background: white;
   transition: all 0.2s;
   box-sizing: border-box;
@@ -316,12 +316,12 @@ const goToLogin = () => {
 .email-input:focus,
 .password-input:focus {
   outline: none;
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .email-input.error,
 .password-input.error {
-  border-color: #FF6B6B;
+  border-color: #FF3B30;
   background: #FFF5F5;
 }
 
@@ -356,7 +356,7 @@ const goToLogin = () => {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #FF6B6B;
+  color: #FF3B30;
   margin: 8px 0 0 0;
 }
 
@@ -384,26 +384,26 @@ const goToLogin = () => {
 .submit-button {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  padding: 14px 32px;
+  background: #FF595A;
+  padding: 16px 32px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.2);
+  box-shadow: 0px 4px 12px rgba(255, 89, 90, 0.2);
   margin-top: 8px;
 }
 
 .submit-button:hover:not(.disabled) {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .submit-button.disabled {
-  background: #E5E7EB;
+  background: #919EAB;
   box-shadow: none;
   cursor: not-allowed;
 }
@@ -442,21 +442,21 @@ const goToLogin = () => {
 .login-button {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  padding: 14px 32px;
+  background: #FF595A;
+  padding: 16px 32px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.2);
+  box-shadow: 0px 4px 12px rgba(255, 89, 90, 0.2);
 }
 
 .login-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -471,7 +471,7 @@ const goToLogin = () => {
 
   .page-title,
   .success-title {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 </style>

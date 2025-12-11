@@ -43,7 +43,7 @@
 
       <!-- Social Media Linking Section -->
       <div class="form-section">
-        <h3 class="form-title">ลิงก์ไปยัง Social</h3>
+        <h2 class="section-title" style="margin-bottom: 16px;">ลิงก์โซเชียล</h2>
 
         <!-- Gmail -->
         <div class="social-section">
@@ -142,6 +142,11 @@
           อัพเดทล่าสุด: {{ lastUpdated }}
         </div>
         <button class="delete-button" @click="showDeleteModal = true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M16.25 4.58333H13.3333V3.75C13.3333 3.05964 12.7737 2.5 12.0833 2.5H7.91667C7.22631 2.5 6.66667 3.05964 6.66667 3.75V4.58333H3.75C3.40482 4.58333 3.125 4.86316 3.125 5.20833C3.125 5.55351 3.40482 5.83333 3.75 5.83333H4.16667V15.4167C4.16667 16.107 4.72631 16.6667 5.41667 16.6667H14.5833C15.2737 16.6667 15.8333 16.107 15.8333 15.4167V5.83333H16.25C16.5952 5.83333 16.875 5.55351 16.875 5.20833C16.875 4.86316 16.5952 4.58333 16.25 4.58333ZM7.91667 3.75H12.0833V4.58333H7.91667V3.75ZM14.5833 15.4167H5.41667V5.83333H14.5833V15.4167Z" fill="#FF3B30"/>
+            <path d="M8.33333 7.5C7.98815 7.5 7.70833 7.77982 7.70833 8.125V13.125C7.70833 13.4702 7.98815 13.75 8.33333 13.75C8.67851 13.75 8.95833 13.4702 8.95833 13.125V8.125C8.95833 7.77982 8.67851 7.5 8.33333 7.5Z" fill="#FF3B30"/>
+            <path d="M11.6667 7.5C11.3215 7.5 11.0417 7.77982 11.0417 8.125V13.125C11.0417 13.4702 11.3215 13.75 11.6667 13.75C12.0118 13.75 12.2917 13.4702 12.2917 13.125V8.125C12.2917 7.77982 12.0118 7.5 11.6667 7.5Z" fill="#FF3B30"/>
+          </svg>
           ลบบัญชี
         </button>
       </div>
@@ -391,7 +396,7 @@ const confirmDelete = () => {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
   font-size: 28px;
-  color: #161c24;
+  color: #000;
   margin: 0 0 32px 0;
 }
 
@@ -410,9 +415,9 @@ const confirmDelete = () => {
 
 .form-title {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #161c24;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
   margin: 0;
 }
 
@@ -432,13 +437,13 @@ const confirmDelete = () => {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 15px;
-  color: #637381;
-  padding: 12px 16px;
+  font-size: 16px;
+  color: #919EAB;
+  padding: 14px 16px;
   padding-right: 45px;
-  border: 1.5px solid #DFE3E8;
-  border-radius: 8px;
-  background: #F9FAFB;
+  border: 1px solid #DFE3E8;
+  border-radius: 12px;
+  background: #F4F6F8;
 }
 
 .input-icon {
@@ -451,21 +456,21 @@ const confirmDelete = () => {
 
 .change-button {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #637381;
+  font-weight: 700;
+  font-size: 16px;
+  color: #212B36;
   background: white;
-  border: 1.5px solid #DFE3E8;
-  padding: 10px 20px;
-  border-radius: 8px;
+  border: 1px solid #DFE3E8;
+  padding: 14px 24px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
 }
 
 .change-button:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 /* Social Media Section */
@@ -478,9 +483,9 @@ const confirmDelete = () => {
 
 .social-title {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #161c24;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
   margin: 0;
 }
 
@@ -488,10 +493,6 @@ const confirmDelete = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: #F9FAFB;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
   gap: 16px;
 }
 
@@ -515,9 +516,9 @@ const confirmDelete = () => {
 
 .social-label {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: #637381;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
   margin: 0;
 }
 
@@ -542,34 +543,43 @@ const confirmDelete = () => {
   align-items: center;
   gap: 8px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  padding: 10px 16px;
-  border: 1.5px solid;
-  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 24px;
+  border: 1px solid #DFE3E8;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
+  color: #212B36;
+  background: white;
+}
+
+.add-social-button:hover {
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .add-social-button.google {
-  color: #4285F4;
+  color: #212B36;
   background: white;
-  border-color: #4285F4;
+  border-color: #DFE3E8;
 }
 
 .add-social-button.google:hover {
-  background: #F0F7FF;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .add-social-button.facebook {
-  color: #1877F2;
+  color: #212B36;
   background: white;
-  border-color: #1877F2;
+  border-color: #DFE3E8;
 }
 
 .add-social-button.facebook:hover {
-  background: #F0F7FF;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .social-icon {
@@ -583,21 +593,21 @@ const confirmDelete = () => {
 
 .disconnect-button {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #637381;
+  font-weight: 700;
+  font-size: 16px;
+  color: #212B36;
   background: white;
-  border: 1.5px solid #DFE3E8;
-  padding: 10px 16px;
-  border-radius: 8px;
+  border: 1px solid #DFE3E8;
+  padding: 14px 24px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
 }
 
 .disconnect-button:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 /* Form Footer */
@@ -612,27 +622,28 @@ const confirmDelete = () => {
 .last-updated {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   color: #919EAB;
 }
 
 .delete-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  color: white;
-  background: linear-gradient(135deg, #FF5757 0%, #FF3838 100%);
-  padding: 12px 32px;
-  border: none;
-  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FF3B30;
+  background: white;
+  padding: 14px 24px;
+  border: 1px solid #DFE3E8;
+  border-radius: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 87, 87, 0.2);
+  transition: all 0.2s;
 }
 
 .delete-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 87, 87, 0.3);
+  border-color: #FF3B30;
 }
 
 /* Modal */
@@ -680,21 +691,20 @@ const confirmDelete = () => {
 .modal-button-primary {
   width: 100%;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  padding: 12px 32px;
+  background: #FF595A;
+  padding: 14px 32px;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.2);
 }
 
 .modal-button-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .modal-actions {
@@ -711,40 +721,39 @@ const confirmDelete = () => {
 .modal-button-danger {
   flex: 1;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  padding: 12px 24px;
+  background: #FF595A;
+  padding: 14px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.2);
 }
 
 .modal-button-danger:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .modal-button-secondary {
   flex: 1;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  color: #637381;
+  font-weight: 700;
+  font-size: 16px;
+  color: #212B36;
   background: white;
-  padding: 12px 24px;
-  border: 1.5px solid #DFE3E8;
-  border-radius: 8px;
+  padding: 14px 24px;
+  border: 1px solid #DFE3E8;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .modal-button-secondary:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 /* Social Success Modal Styles */

@@ -69,14 +69,9 @@
 
             <!-- Phone Images -->
             <img
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=800&fit=crop"
-              alt="ASAP App Phone 1"
+              :src="appPhoneImage"
+              alt="ASAP App Phone"
               class="phone phone-1"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=800&fit=crop"
-              alt="ASAP App Phone 2"
-              class="phone phone-2"
             />
           </div>
         </div>
@@ -86,6 +81,7 @@
 </template>
 
 <script setup>
+import appPhoneImage from '@/assets/images/app-phone.png'
 </script>
 
 <style scoped>
@@ -257,23 +253,15 @@
 
 .phone {
   position: absolute;
-  width: 240px;
+  width: 520px;
   height: auto;
-  border-radius: 28px;
-  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.35);
   z-index: 2;
 }
 
 .phone-1 {
-  top: 48%;
-  left: 15%;
-  transform: translate(-50%, -50%) rotate(-12deg);
-}
-
-.phone-2 {
-  top: 48%;
-  right: 5%;
-  transform: translate(0, -50%) rotate(8deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .coin {

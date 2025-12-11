@@ -18,6 +18,7 @@
               :key="index"
               :modelCount="category.modelCount"
               :categoryName="category.name"
+              :carType="category.carType"
             />
           </div>
         </div>
@@ -67,14 +68,14 @@ import { ref, computed } from 'vue'
 import CarCategoryCard from './CarCategoryCard.vue'
 
 const categories = ref([
-  { name: 'Economy', modelCount: 1 },
-  { name: 'SUV', modelCount: 1 },
-  { name: 'EV Car', modelCount: 1 },
-  { name: 'Hybrid Car', modelCount: 1 },
-  { name: 'Economy', modelCount: 1 },
-  { name: 'SUV', modelCount: 1 },
-  { name: 'EV Car', modelCount: 1 },
-  { name: 'Hybrid Car', modelCount: 1 }
+  { name: 'Economy', modelCount: 1, carType: 'economy' },
+  { name: 'Compact', modelCount: 1, carType: 'compact' },
+  { name: 'Sedan', modelCount: 1, carType: 'sedan' },
+  { name: 'SUV', modelCount: 1, carType: 'suv' },
+  { name: 'Pickup', modelCount: 1, carType: 'pickup' },
+  { name: 'Van', modelCount: 1, carType: 'van' },
+  { name: 'Luxury', modelCount: 1, carType: 'luxury' },
+  { name: 'EV Car', modelCount: 1, carType: 'ev' }
 ])
 
 const currentSlide = ref(0)

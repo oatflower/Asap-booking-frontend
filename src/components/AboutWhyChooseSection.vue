@@ -12,57 +12,40 @@
 
         <!-- Features Grid -->
         <div class="features-grid">
-          <!-- Feature 1: ปลอดล็อก -->
+          <!-- Feature 1: ปลดล็อก -->
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M24 4L30 18H42L32 26L36 40L24 32L12 40L16 26L6 18H18L24 4Z" stroke="white" stroke-width="2" fill="none"/>
-                <path d="M20 22H28M20 28H28" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+              <img :src="uspIcon1" alt="ปลดล็อก" class="icon-img" />
             </div>
             <h3 class="feature-title">ปลดล็อก <span class="normal">ทุกการเดินทาง</span></h3>
-            <p class="feature-description">เปิดประสบการณ์การเดินทางแบบไม่มีสิ่งกีดขวาง รักษาไฟล์รายงานนอกเมนูลงทะเบียนรายเดือนบ่งชี้กง เพื่อทุก asap เท่านั้นเป้าหมายรถของเคาเดินทางและกล้า</p>
+            <p class="feature-description">เปิดประสบการณ์การเดินทางแบบไร้ขีดจำกัดกับบริการเช่ารถขับเองคุณภาพสูง จาก asap เหมาะสำหรับท่องเที่ยว เดินทางทำงาน ทั้งเช่ารายวัน รายเดือน</p>
           </div>
 
           <!-- Feature 2: อิสระ -->
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <rect x="12" y="20" width="24" height="16" rx="2" stroke="white" stroke-width="2" fill="none"/>
-                <path d="M24 20V12M18 12H30" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="20" cy="28" r="2" fill="white"/>
-              </svg>
+              <img :src="uspIcon2" alt="อิสระ" class="icon-img" />
             </div>
             <h3 class="feature-title">อิสระ <span class="normal">ทุกการเดินทาง</span></h3>
-            <p class="feature-description">เลือกเส้นทางและเวลาส่งออนใจได้อย่างเต็มที่ ด้วยรถเช่าระดับ จบทั้งหมด ซึ่งทำทางท้องบังประทามรถการเดินทางที่ตรงใจ และไว้กว่าอุดจงทจา</p>
+            <p class="feature-description">เลือกเส้นทางและเวลาตามใจได้อย่างเต็มที่ ด้วยรถเช่าหลากหลายรุ่น ตอบโจทย์ทุกความต้องการ เชื่อมต่อทุกการเดินทางอย่างไร้รอยต่อ</p>
           </div>
 
-          <!-- Feature 3: ทุกมาที่มีค่า -->
+          <!-- Feature 3: ทุกบาทมีค่า -->
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <rect x="8" y="18" width="32" height="20" rx="2" stroke="white" stroke-width="2" fill="none"/>
-                <path d="M16 18V14C16 10 18 8 24 8C30 8 32 10 32 14V18" stroke="white" stroke-width="2"/>
-                <circle cx="24" cy="28" r="3" stroke="white" stroke-width="2" fill="none"/>
-                <path d="M24 31V34" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+              <img :src="uspIcon3" alt="ทุกบาทมีค่า" class="icon-img" />
             </div>
-            <h3 class="feature-title">ทุกมาที่มีค่า <span class="normal">ทุกการเดินทาง</span></h3>
-            <p class="feature-description">ระหัสโฉะะนองคุณ ปลากรรวดเจริงและเป็นงเบิยเฮิอง ส่องจำ นุ่มทงของปสมันหน์ และชั้งเกี้ยบยซ่องงงตจา</p>
+            <h3 class="feature-title">ทุกบาทมีค่า <span class="normal">ทุกการเดินทาง</span></h3>
+            <p class="feature-description">รับประกันราคาดีที่สุด พร้อมโปรโมชันสุดคุ้ม สะสมแต้ม ASC Coin แลกสิทธิประโยชน์มากมาย คุ้มค่าทุกการเช่า</p>
           </div>
 
-          <!-- Feature 4: อบอุ่น -->
+          <!-- Feature 4: อุ่นใจ -->
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M24 38C24 38 10 30 10 18C10 12 14 8 18 8C20 8 22 9 24 11C26 9 28 8 30 8C34 8 38 12 38 18C38 30 24 38 24 38Z" stroke="white" stroke-width="2" fill="none"/>
-                <rect x="10" y="20" width="28" height="14" rx="2" stroke="white" stroke-width="2" fill="none"/>
-                <circle cx="18" cy="27" r="2" fill="white"/>
-                <circle cx="30" cy="27" r="2" fill="white"/>
-              </svg>
+              <img :src="uspIcon4" alt="อุ่นใจ" class="icon-img" />
             </div>
-            <h3 class="feature-title">อบอุ่น <span class="normal">ทุกการเดินทาง</span></h3>
-            <p class="feature-description">เดินทางอย่างมั่นใจด้วยระบบการบริการที่คำนึงถึงความปลอดถัยและดูงดเดกอสจาได รองรับจาร กั้งจ้เคาระหางเรซงเจกงทังจเดียนนกระทบทม ตอบถี 24 ชั่วโมง</p>
+            <h3 class="feature-title">อุ่นใจ <span class="normal">ทุกการเดินทาง</span></h3>
+            <p class="feature-description">เดินทางอย่างมั่นใจด้วยระบบดูแลความปลอดภัย รถทุกคันผ่านการตรวจสอบ พร้อมบริการช่วยเหลือฉุกเฉิน 24 ชั่วโมง</p>
           </div>
         </div>
       </div>
@@ -70,12 +53,7 @@
       <!-- Right Content - ASAP Logo -->
       <div class="right-content">
         <div class="large-logo">
-          <svg viewBox="0 0 400 200" class="logo-svg">
-            <!-- Swoosh -->
-            <path d="M50 80 Q 80 30, 120 50" stroke="white" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <!-- asap text -->
-            <text x="140" y="130" fill="white" font-family="Arial, sans-serif" font-size="80" font-weight="bold">asap</text>
-          </svg>
+          <img :src="logoImg" alt="asap" class="logo-svg" />
         </div>
       </div>
     </div>
@@ -83,6 +61,11 @@
 </template>
 
 <script setup>
+import uspIcon1 from '@/assets/images/usp-icon-1.svg'
+import uspIcon2 from '@/assets/images/usp-icon-2.svg'
+import uspIcon3 from '@/assets/images/usp-icon-3.svg'
+import uspIcon4 from '@/assets/images/usp-icon-4.svg'
+import logoImg from '@/assets/images/logo.svg'
 </script>
 
 <style scoped>
@@ -168,6 +151,12 @@
   justify-content: center;
 }
 
+.icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
 .feature-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
@@ -209,6 +198,7 @@
 .logo-svg {
   width: 100%;
   height: auto;
+  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 1440px) {

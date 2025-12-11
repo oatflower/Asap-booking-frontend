@@ -79,7 +79,7 @@
       <div class="notice-card">
         <div class="notice-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#FF595A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="notice-content">
@@ -168,7 +168,7 @@
               <span class="file-name">{{ uploadedFiles.license.name }}</span>
               <button class="remove-file" @click.stop="removeFile('license')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M6 6l8 8m0-8l-8 8" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 6l8 8m0-8l-8 8" stroke="#FF595A" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
             </div>
@@ -201,7 +201,7 @@
               <span class="file-name">{{ uploadedFiles.idCard.name }}</span>
               <button class="remove-file" @click.stop="removeFile('idCard')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M6 6l8 8m0-8l-8 8" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 6l8 8m0-8l-8 8" stroke="#FF595A" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </button>
             </div>
@@ -240,8 +240,8 @@
         <div class="modal-content approving-modal" @click.stop>
           <div class="modal-icon">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-              <circle cx="32" cy="32" r="30" stroke="#FF6B6B" stroke-width="4" fill="none"/>
-              <path d="M32 20v16m0 8h.01" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="32" cy="32" r="30" stroke="#FF595A" stroke-width="4" fill="none"/>
+              <path d="M32 20v16m0 8h.01" stroke="#FF595A" stroke-width="4" stroke-linecap="round"/>
             </svg>
           </div>
           <h2 class="modal-title">{{ t('checkin.approvingTitle') }}</h2>
@@ -449,9 +449,9 @@ const scrollToUpload = () => {
 
 .page-title {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 700;
-  color: #161C24;
+  color: #000;
   margin: 0 0 8px 0;
 }
 
@@ -625,7 +625,7 @@ const scrollToUpload = () => {
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #FF6B6B;
+  color: #FF595A;
   margin-bottom: 8px;
 }
 
@@ -735,7 +735,7 @@ const scrollToUpload = () => {
 }
 
 .required {
-  color: #FF6B6B;
+  color: #FF595A;
 }
 
 .upload-area {
@@ -748,7 +748,7 @@ const scrollToUpload = () => {
 }
 
 .upload-area:hover {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
   background: #FFF5F5;
 }
 
@@ -830,7 +830,7 @@ const scrollToUpload = () => {
   width: 18px;
   height: 18px;
   cursor: pointer;
-  accent-color: #FF6B6B;
+  accent-color: #FF595A;
 }
 
 .checkbox-text {
@@ -842,7 +842,7 @@ const scrollToUpload = () => {
 }
 
 .terms-link {
-  color: #FF6B6B;
+  color: #FF595A;
   text-decoration: none;
   font-weight: 600;
 }
@@ -858,9 +858,9 @@ const scrollToUpload = () => {
 }
 
 .submit-button {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  background: #FF595A;
   border: none;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 16px 48px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
@@ -868,16 +868,16 @@ const scrollToUpload = () => {
   color: white;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 4px 12px rgba(255, 89, 90, 0.3);
 }
 
 .submit-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0px 6px 16px rgba(255, 107, 107, 0.4);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .submit-button:disabled {
-  background: #DFE3E8;
+  background: #919EAB;
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -992,7 +992,7 @@ const scrollToUpload = () => {
 }
 
 .contact-link {
-  color: #FF6B6B;
+  color: #FF595A;
   text-decoration: none;
   font-weight: 600;
 }
@@ -1003,25 +1003,25 @@ const scrollToUpload = () => {
 
 .modal-button {
   border: none;
-  border-radius: 12px;
-  padding: 14px 32px;
+  border-radius: 20px;
+  padding: 16px 32px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
   width: 100%;
 }
 
 .modal-button.primary {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  background: #FF595A;
   color: white;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.3);
+  box-shadow: 0px 4px 12px rgba(255, 89, 90, 0.3);
 }
 
 .modal-button.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 6px 16px rgba(255, 107, 107, 0.4);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .modal-button.secondary {
@@ -1087,7 +1087,7 @@ const scrollToUpload = () => {
   }
 
   .page-title {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .trip-info-grid {
@@ -1183,12 +1183,12 @@ const scrollToUpload = () => {
 .retry-button {
   background: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 12px 24px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 15px;
-  font-weight: 600;
-  color: #FF6B6B;
+  font-weight: 700;
+  color: #FF595A;
   cursor: pointer;
   transition: all 0.3s;
   white-space: nowrap;

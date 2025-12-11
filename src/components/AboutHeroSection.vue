@@ -3,12 +3,7 @@
     <div class="about-hero-container">
       <!-- ASAP Logo -->
       <div class="logo-wrapper">
-        <svg viewBox="0 0 400 200" class="asap-logo">
-          <!-- Swoosh -->
-          <path d="M50 80 Q 80 30, 120 50" stroke="#FF6B6B" stroke-width="12" fill="none" stroke-linecap="round"/>
-          <!-- asap text -->
-          <text x="140" y="130" fill="#FF6B6B" font-family="Arial, sans-serif" font-size="80" font-weight="bold">asap</text>
-        </svg>
+        <img :src="aboutLogo" alt="asap" class="asap-logo" />
       </div>
 
       <!-- Hero Title -->
@@ -19,7 +14,7 @@
       <!-- Cars Image -->
       <div class="cars-image-wrapper">
         <img
-          src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&h=400&fit=crop"
+          :src="aboutHeroImage"
           alt="ASAP Cars Fleet"
           class="cars-image"
         />
@@ -30,7 +25,7 @@
         <h2 class="bottom-title">มุ่งมั่นนำเสนอบริการเช่ารถทั้งแบบรายวัน รายเดือน และรายปี</h2>
         <p class="bottom-description">
           พร้อมตอบโจทย์ทั้งลูกค้าทั่วไปและลูกค้าองค์กร ด้วยประสบการณ์กว่า<br>
-          10 ปี ในอุดสาหกรรมรถเช่า เรามีความพร้อมทั้งด้านคุณภาพของรถ<br>
+          10 ปี ในอุตสาหกรรมรถเช่า เรามีความพร้อมทั้งด้านคุณภาพของรถ<br>
           บริการที่รวดเร็ว และราคาที่คุ้มค่า
         </p>
       </div>
@@ -39,6 +34,8 @@
 </template>
 
 <script setup>
+import aboutLogo from '@/assets/images/about-logo.svg'
+import aboutHeroImage from '@/assets/images/about-hero-image.png'
 </script>
 
 <style scoped>
@@ -65,8 +62,9 @@
 }
 
 .asap-logo {
-  width: 300px;
+  width: 400px;
   height: auto;
+  max-width: 100%;
 }
 
 .hero-title {

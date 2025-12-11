@@ -291,8 +291,8 @@ const filteredBranches = computed(() => {
 
 <style scoped>
 .branches-section {
-  background: #F9FAFB;
-  padding: 120px 0 0 0;
+  background: white;
+  padding: 80px 0 0 0;
   min-height: 100vh;
 }
 
@@ -305,10 +305,11 @@ const filteredBranches = computed(() => {
 .branches-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 40px;
-  color: #161c24;
-  text-align: center;
-  margin: 0 0 48px 0;
+  font-size: 42px;
+  color: #000;
+  text-align: left;
+  margin: 0 0 32px 0;
+  line-height: 1.587;
 }
 
 .tabs-search-row {
@@ -322,30 +323,31 @@ const filteredBranches = computed(() => {
 .tabs {
   display: flex;
   gap: 0;
+  border-bottom: 1px solid #DFE3E8;
 }
 
 .tab {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 700;
   color: #637381;
   background: transparent;
   border: none;
-  border-bottom: 3px solid transparent;
-  padding: 12px 24px;
+  border-bottom: 2px solid transparent;
+  padding: 16px 24px;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
+  margin-bottom: -1px;
 }
 
 .tab:hover {
-  color: #FF6B6B;
+  color: #FF595A;
 }
 
 .tab.active {
-  color: #FF6B6B;
-  border-bottom-color: #FF6B6B;
-  font-weight: 600;
+  color: #FF595A;
+  border-bottom-color: #FF595A;
 }
 
 .search-box {
@@ -355,11 +357,11 @@ const filteredBranches = computed(() => {
 
 .search-input {
   width: 100%;
-  padding: 12px 40px 12px 16px;
+  padding: 14px 44px 14px 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #161c24;
   outline: none;
   transition: border-color 0.2s;
@@ -367,7 +369,7 @@ const filteredBranches = computed(() => {
 }
 
 .search-input:focus {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .search-input::placeholder {
@@ -385,24 +387,23 @@ const filteredBranches = computed(() => {
 .branches-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
   margin-bottom: 48px;
 }
 
 .branch-card {
   background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
   transition: all 0.2s;
+  border-bottom: 1px solid #DFE3E8;
 }
 
-.branch-card:hover {
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+.branch-card:last-child {
+  border-bottom: none;
 }
 
 .branch-left {
@@ -425,21 +426,22 @@ const filteredBranches = computed(() => {
 
 .status-text {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 13px;
-  color: #637381;
+  font-size: 14px;
+  font-weight: 700;
+  color: #22C55E;
 }
 
 .branch-name {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
-  color: #161c24;
+  color: #000;
   margin: 0 0 8px 0;
 }
 
 .branch-address {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #637381;
   line-height: 1.6;
   margin: 0;
@@ -453,23 +455,22 @@ const filteredBranches = computed(() => {
 }
 
 .rent-button {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  background: #FF595A;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 12px 32px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.3);
   white-space: nowrap;
 }
 
 .rent-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 8px 20px rgba(255, 107, 107, 0.4);
+  box-shadow: 0px 8px 20px rgba(255, 89, 90, 0.3);
 }
 
 .branch-actions {
@@ -492,13 +493,13 @@ const filteredBranches = computed(() => {
 }
 
 .action-button:hover {
-  color: #FF6B6B;
+  color: #FF595A;
 }
 
 .action-button:hover svg path,
 .action-button:hover svg rect,
 .action-button:hover svg circle {
-  stroke: #FF6B6B;
+  stroke: #FF595A;
 }
 
 /* Pagination */
@@ -516,20 +517,20 @@ const filteredBranches = computed(() => {
 
 .items-select {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   color: #161c24;
   background: white;
   border: 1px solid #DFE3E8;
-  border-radius: 6px;
-  padding: 8px 12px;
+  border-radius: 12px;
+  padding: 12px 16px;
   cursor: pointer;
   outline: none;
 }
 
 .items-label {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #637381;
 }
 
@@ -554,8 +555,8 @@ const filteredBranches = computed(() => {
 }
 
 .page-arrow:hover:not(:disabled) {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .page-arrow:disabled {
@@ -581,21 +582,21 @@ const filteredBranches = computed(() => {
 }
 
 .page-number:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .page-number.active {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  border-color: #FF6B6B;
+  background: #FF595A;
+  border-color: #FF595A;
   color: white;
 }
 
 /* Why Choose Us Section */
 .why-choose-section {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  background: #FF595A;
   padding: 60px 0;
-  border-top-right-radius: 80px;
+  border-top-right-radius: 40px;
 }
 
 .why-choose-container {
@@ -660,16 +661,25 @@ const filteredBranches = computed(() => {
 
 @media (max-width: 768px) {
   .branches-section {
-    padding: 100px 0 0 0;
+    padding: 80px 0 0 0;
   }
 
   .branches-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .tabs-search-row {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+
+  .tab {
+    font-size: 16px;
+    padding: 12px 16px;
   }
 
   .search-box {
@@ -678,6 +688,10 @@ const filteredBranches = computed(() => {
 
   .branch-card {
     flex-direction: column;
+  }
+
+  .branch-name {
+    font-size: 20px;
   }
 
   .branch-right {

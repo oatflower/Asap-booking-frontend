@@ -45,8 +45,8 @@ const { t } = useLanguage()
 
 <style scoped>
 .success-section {
-  background: #F9FAFB;
-  padding: 100px 0;
+  background: white;
+  padding: 80px 0;
   width: 100%;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -61,62 +61,62 @@ const { t } = useLanguage()
 }
 
 .success-card {
-  background: white;
-  border-radius: 24px;
-  padding: 60px 48px;
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 24px;
 }
 
 .icon-wrapper {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .success-icon {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
 }
 
 .success-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  color: #161c24;
-  margin: 0 0 16px 0;
+  font-size: 42px;
+  color: #000;
+  margin: 0;
+  line-height: 1.587;
 }
 
 .success-description {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  color: #637381;
-  margin: 0 0 32px 0;
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+  line-height: 1.587;
 }
 
 .home-button {
   width: 100%;
   max-width: 300px;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  border: none;
-  border-radius: 8px;
+  padding: 16px 32px;
+  background: white;
+  border: 1px solid #DFE3E8;
+  border-radius: 20px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
-  color: white;
+  color: #161C24;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0px 8px 24px rgba(255, 107, 107, 0.3);
+  text-align: center;
 }
 
 .home-button:hover {
+  border-color: #FF595A;
   transform: translateY(-2px);
-  box-shadow: 0px 12px 32px rgba(255, 107, 107, 0.4);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .info-text {

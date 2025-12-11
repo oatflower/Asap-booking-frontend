@@ -3,7 +3,7 @@
     <div class="contact-container">
       <!-- Contact Form -->
       <div class="form-wrapper">
-        <h2 class="form-title">ติดต่อ<span class="highlight">เอแซ็ป</span></h2>
+        <h2 class="form-title">ติดต่อเอแซ็ป</h2>
 
         <form class="contact-form" @submit.prevent="handleSubmit">
           <!-- Row 1: Name Fields -->
@@ -107,25 +107,23 @@
 
       <!-- Contact Information -->
       <div class="contact-info">
-        <div class="info-section">
-          <h3 class="info-title">บริษัท ชิมแอฮจิคติด ออโต้ เพอร์ฟอร์มานซ์ จำกัด (มหาชน)</h3>
-          <p class="info-address">
-            149 หมู่ 3 ถ.เทพารักษ์ ต.เทพารักษ์ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270
-          </p>
-        </div>
+        <p class="info-address">
+          บริษัท ซินเนอร์เจติค ออโต้ เพอร์ฟอร์มานซ์ จำกัด (มหาชน)<br/>
+          149 หมู่ 3 ถ.เทพารักษ์ ต.เทพารักษ์ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270
+        </p>
 
         <div class="social-buttons">
           <a href="#" class="social-button">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="social-icon">
-              <circle cx="10" cy="10" r="8" fill="#00B900"/>
-              <path d="M14 7L10 11L6 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="social-icon">
+              <rect width="24" height="24" rx="6" fill="#00B900"/>
+              <path d="M7 11.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5c0 2.7-2 5-4.7 5.4v-1.6c2-0.4 3.5-2 3.5-3.8 0-2.2-1.9-4-4.3-4s-4.3 1.8-4.3 4c0 1.8 1.5 3.4 3.5 3.8v1.6c-2.7-0.4-4.7-2.7-4.7-5.4z" fill="white"/>
             </svg>
             <span>@asapcarrental</span>
           </a>
           <a href="#" class="social-button">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="social-icon">
-              <circle cx="10" cy="10" r="8" fill="#1877F2"/>
-              <path d="M11 13V10h2l.3-2H11V7c0-.6.1-1 1-1h1V4h-1.5C10 4 9 4.9 9 6.5V8H7v2h2v3h2z" fill="white"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="social-icon">
+              <circle cx="12" cy="12" r="10" fill="#1877F2"/>
+              <path d="M13 15V12h2l.3-2H13V9c0-.6.1-1 1-1h1V6h-1.5C12 6 11 6.9 11 8.5V10H9v2h2v3h2z" fill="white"/>
             </svg>
             <span>Asap Thailand</span>
           </a>
@@ -155,46 +153,41 @@ const handleSubmit = () => {
 
 <style scoped>
 .contact-section {
-  background: #F9FAFB;
-  padding: 100px 0;
+  background: #F4F6F8;
+  padding: 80px 0;
   width: 100%;
   min-height: calc(100vh - 80px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .contact-container {
-  max-width: 1680px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 200px;
+  padding: 0 32px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
 }
 
 /* Form Wrapper */
 .form-wrapper {
   background: white;
-  border-radius: 24px;
-  padding: 60px;
+  border-radius: 32px;
+  padding: 40px;
   width: 100%;
-  max-width: 700px;
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
 }
 
 .form-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 36px;
-  color: #161c24;
-  text-align: center;
-  margin: 0 0 40px 0;
-}
-
-.form-title .highlight {
-  color: #FF6B6B;
+  font-size: 28px;
+  color: #212B36;
+  text-align: left;
+  margin: 0 0 32px 0;
 }
 
 /* Form Styles */
@@ -232,13 +225,13 @@ const handleSubmit = () => {
   font-size: 16px;
   padding: 14px 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   outline: none;
   transition: border-color 0.2s;
 }
 
 .form-input:focus {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 .input-with-icon {
@@ -269,7 +262,7 @@ const handleSubmit = () => {
   gap: 8px;
   padding: 14px 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   background: white;
   cursor: pointer;
   flex-shrink: 0;
@@ -299,7 +292,7 @@ const handleSubmit = () => {
   font-size: 16px;
   padding: 14px 16px;
   border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  border-radius: 12px;
   outline: none;
   transition: border-color 0.2s;
   resize: vertical;
@@ -307,29 +300,28 @@ const handleSubmit = () => {
 }
 
 .form-textarea:focus {
-  border-color: #FF6B6B;
+  border-color: #FF595A;
 }
 
 /* Submit Button */
 .submit-button {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
+  background: #FF595A;
   border: none;
-  border-radius: 50px;
+  border-radius: 20px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 16px;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 8px 24px rgba(255, 107, 107, 0.3);
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 12px 32px rgba(255, 107, 107, 0.4);
+  box-shadow: 0px 8px 24px rgba(255, 89, 90, 0.3);
 }
 
 .submit-button:active {
@@ -341,29 +333,15 @@ const handleSubmit = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   text-align: center;
-}
-
-.info-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.info-title {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #161c24;
-  margin: 0;
 }
 
 .info-address {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 15px;
-  color: #637381;
+  font-size: 16px;
+  color: #212B36;
   margin: 0;
   line-height: 1.6;
 }
@@ -371,7 +349,7 @@ const handleSubmit = () => {
 /* Social Buttons */
 .social-buttons {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -383,18 +361,18 @@ const handleSubmit = () => {
   padding: 12px 24px;
   background: white;
   border: 1px solid #DFE3E8;
-  border-radius: 50px;
+  border-radius: 20px;
   text-decoration: none;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 14px;
   color: #637381;
   transition: all 0.2s;
 }
 
 .social-button:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
   transform: translateY(-2px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -403,44 +381,35 @@ const handleSubmit = () => {
   flex-shrink: 0;
 }
 
-@media (max-width: 1440px) {
-  .contact-container {
-    padding: 0 100px;
-  }
-}
-
 @media (max-width: 1024px) {
   .contact-container {
-    padding: 0 40px;
+    padding: 0 24px;
   }
 
   .form-wrapper {
-    padding: 48px 40px;
-  }
-
-  .form-title {
-    font-size: 32px;
+    padding: 32px 24px;
   }
 }
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 80px 0;
+    padding: 80px 0 60px 0;
   }
 
   .contact-container {
     padding: 0 20px;
-    gap: 48px;
+    gap: 32px;
   }
 
   .form-wrapper {
-    padding: 40px 24px;
+    padding: 24px 20px;
     max-width: 100%;
+    border-radius: 16px;
   }
 
   .form-title {
-    font-size: 28px;
-    margin-bottom: 32px;
+    font-size: 24px;
+    margin-bottom: 24px;
   }
 
   .form-row {
@@ -449,7 +418,7 @@ const handleSubmit = () => {
   }
 
   .contact-form {
-    gap: 20px;
+    gap: 16px;
   }
 
   .phone-input {
@@ -460,8 +429,8 @@ const handleSubmit = () => {
     width: fit-content;
   }
 
-  .submit-button {
-    font-size: 16px;
+  .info-address {
+    font-size: 14px;
   }
 
   .social-buttons {
