@@ -5,75 +5,62 @@
       <div class="left-section">
         <div class="section-header">
           <h2 class="section-title">
-            <span class="highlight">เอแซ็ป</span><br>พร้อมให้บริการ
+            <span class="highlight">เอแซ็ป</span>
           </h2>
+          <h2 class="section-title">พร้อมให้บริการ</h2>
         </div>
       </div>
 
       <!-- Right Side: Service Cards Grid -->
       <div class="right-section">
         <div class="cards-grid">
-        <!-- Card 1: รถเช่ารายวัน/รายเดือน -->
-        <div class="service-card card-with-image blue-gradient">
-          <div class="card-content">
-            <h3 class="card-title">รถเช่ารายวัน/<br>รายเดือน</h3>
+          <!-- Card 1: รถเช่ารายวัน/รายเดือน (with background image) -->
+          <div class="service-card card-with-bg-image">
+            <div class="card-content">
+              <h3 class="card-title">รถเช่ารายวัน/รายเดือน</h3>
+            </div>
+            <button class="arrow-button">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M7 16H25M25 16L17 8M25 16L17 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
-          <div class="card-image">
-            <img
-              src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop"
-              alt="รถเช่ารายวัน/รายเดือน"
-              class="service-image"
-            />
-          </div>
-          <button class="arrow-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
 
-        <!-- Card 2: รถเช่ารายปี Car Subscription -->
-        <div class="service-card card-no-image coral-gradient">
-          <div class="card-content">
-            <h3 class="card-title">รถเช่ารายปี<br>Car Subscription</h3>
+          <!-- Card 2: รถเช่ารายปี Car Subscription -->
+          <div class="service-card card-no-image coral-gradient">
+            <div class="card-content">
+              <h3 class="card-title card-title-large">รถเช่ารายปี<br>Car Subscription</h3>
+            </div>
+            <button class="arrow-button">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M7 16H25M25 16L17 8M25 16L17 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
-          <button class="arrow-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
 
-        <!-- Card 3: รถเช่า สำหรับองค์กร -->
-        <div class="service-card card-no-image coral-gradient card-bottom-text">
-          <div class="card-content">
-            <h3 class="card-title">รถเช่า<br>สำหรับองค์กร</h3>
+          <!-- Card 3: รถเช่า สำหรับองค์กร -->
+          <div class="service-card card-no-image coral-gradient card-bottom-text">
+            <div class="card-content">
+              <h3 class="card-title card-title-large">รถเช่า<br>สําหรับองค์กร</h3>
+            </div>
+            <button class="arrow-button arrow-top">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M7 16H25M25 16L17 8M25 16L17 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
-          <button class="arrow-button arrow-top">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
 
-        <!-- Card 4: รถเช่าพร้อมคนขับ/พนักงานขับรถ -->
-        <div class="service-card card-with-image gray-gradient card-bottom-text">
-          <div class="card-content">
-            <h3 class="card-title">รถเช่าพร้อมคนขับ/<br>พนักงานขับรถ</h3>
+          <!-- Card 4: รถเช่าพร้อมคนขับ/พนักงานขับรถ (with background image) -->
+          <div class="service-card card-with-bg-image-dark card-bottom-text">
+            <div class="card-content">
+              <h3 class="card-title">รถเช่าพร้อมคนขับ/<br>พนักงานขับรถ</h3>
+            </div>
+            <button class="arrow-button arrow-top">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M7 16H25M25 16L17 8M25 16L17 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
-          <div class="card-image">
-            <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop"
-              alt="รถเช่าพร้อมคนขับ"
-              class="service-image"
-            />
-          </div>
-          <button class="arrow-button arrow-top">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
         </div>
       </div>
     </div>
@@ -86,64 +73,83 @@
 <style scoped>
 .service-cards-section {
   background: white;
-  padding: 80px 0;
   width: 100%;
+  height: 1400px;
+  padding: 64px 56px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gradient overlay */
+.service-cards-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 96px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .service-container {
-  max-width: 1680px;
-  margin: 0 auto;
-  padding: 0 200px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
   align-items: center;
+  gap: 64px;
 }
 
 .left-section {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-shrink: 0;
+  padding: 177px 0 0 56px;
+  align-self: stretch;
 }
 
 .section-header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 .right-section {
-  width: 100%;
+  flex: 1;
+  padding-top: 32px;
 }
 
 .section-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 42px;
-  color: #161c24;
+  font-size: 72px;
+  color: #000000;
   margin: 0;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
-  letter-spacing: 0.21px;
-  line-height: 1.3;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 .section-title .highlight {
-  color: #ff595a;
+  color: #FF595A;
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 48px;
+  padding: 0 32px;
 }
 
 .service-card {
   position: relative;
-  border-radius: 20px 20px 20px 80px;
-  padding: 40px;
-  min-height: 280px;
+  border-radius: 80px 20px 20px 20px;
+  padding: 48px 48px 39px 100px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: stretch;
+  align-items: stretch;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -173,88 +179,81 @@
   transform: translateX(4px);
 }
 
-.blue-gradient {
-  background: linear-gradient(135deg, #7BA4DB 0%, #B8C9E0 100%);
+/* Card 1: Background image with red tint */
+.card-with-bg-image {
+  background: #FF595A;
+  background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
 }
 
 .coral-gradient {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF9999 100%);
+  background: #FF595A;
+  position: relative;
 }
 
-.gray-gradient {
-  background: linear-gradient(135deg, #B8C5D0 0%, #D4DBE3 100%);
+/* Add decorative circle gradient overlay for coral cards */
+.coral-gradient::after {
+  content: '';
+  position: absolute;
+  width: 1105px;
+  height: 1090px;
+  top: -451px;
+  left: -280px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+/* Card 4: Background image with dark gradient overlay */
+.card-with-bg-image-dark {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%),
+              url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80');
+  background-size: cover, cover;
+  background-position: center, center;
 }
 
 .card-content {
   z-index: 2;
-  position: relative;
-}
-
-.card-bottom-text .card-content {
   position: absolute;
-  bottom: 40px;
+  top: 40px;
   left: 40px;
-  right: 40px;
-  z-index: 3;
 }
 
 .card-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 45px;
+  font-size: 41px;
   color: #F4F6F8;
   margin: 0;
-  line-height: 69px;
-  letter-spacing: 0.23px;
-  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  line-height: 1.463;
+  letter-spacing: 0.5%;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card-image {
+.card-title-large {
+  font-size: 45px;
+  line-height: 1.533;
+}
+
+/* Card content positioning for bottom text cards */
+.card-bottom-text .card-content {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 55%;
-  height: 65%;
-  z-index: 1;
-  border-radius: 20px 0 24px 0;
-  overflow: hidden;
-}
-
-.card-bottom-text .card-image {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 24px;
-}
-
-.card-bottom-text .card-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
-  z-index: 1;
-}
-
-.service-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
-.card-bottom-text .service-image {
-  opacity: 1;
+  bottom: 48px;
+  left: 40px;
+  right: 40px;
+  top: auto;
 }
 
 .arrow-button {
   position: absolute;
-  bottom: 40px;
-  right: 40px;
+  bottom: 32px;
+  right: 48px;
   width: 64px;
   height: 64px;
   background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(10px);
   border: none;
   border-radius: 1000px;
   display: flex;
@@ -263,6 +262,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 3;
+}
+
+.arrow-button svg {
+  width: 32px;
+  height: 32px;
 }
 
 .arrow-button:hover {
@@ -280,87 +284,69 @@
 
 .arrow-button.arrow-top {
   bottom: auto;
-  top: 40px;
+  top: 32px;
 }
 
 @media (max-width: 1440px) {
-  .service-container {
-    padding: 0 100px;
-    gap: 60px;
+  .service-cards-section {
+    height: auto;
+    min-height: 900px;
+    padding: 64px 40px;
+  }
+
+  .left-section {
+    padding: 100px 0 0 40px;
+  }
+
+  .section-title {
+    font-size: 56px;
+  }
+
+  .service-card {
+    min-height: 450px;
+    padding: 40px 40px 32px 80px;
+  }
+
+  .card-title {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 1024px) {
-  .service-container {
-    padding: 0 40px;
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .section-title {
-    font-size: 36px;
-  }
-
-  .cards-grid {
-    gap: 24px;
-  }
-
-  .service-card {
-    padding: 32px;
-    min-height: 280px;
-  }
-
-  .card-bottom-text .card-content {
-    bottom: 32px;
-    left: 32px;
-    right: 32px;
-  }
-
-  .card-title {
-    font-size: 32px;
-    line-height: 48px;
-  }
-
-  .arrow-button {
-    width: 56px;
-    height: 56px;
-    bottom: 32px;
-    right: 32px;
-  }
-
-  .arrow-button.arrow-top {
-    bottom: auto;
-    top: 32px;
-  }
-
-  .service-card {
-    border-radius: 20px 20px 20px 60px;
-  }
-}
-
-@media (max-width: 768px) {
   .service-cards-section {
-    padding: 60px 0;
+    height: auto;
+    min-height: auto;
+    padding: 60px 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .service-container {
-    padding: 0 20px;
-    grid-template-columns: 1fr;
-    gap: 32px;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left-section {
+    padding: 0;
   }
 
   .section-title {
-    font-size: 28px;
+    font-size: 42px;
+  }
+
+  .right-section {
+    padding-top: 0;
   }
 
   .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 32px;
+    padding: 0;
   }
 
   .service-card {
-    padding: 28px;
-    min-height: 240px;
+    min-height: 350px;
+    padding: 32px 32px 28px 60px;
+    border-radius: 60px 16px 16px 16px;
   }
 
   .card-bottom-text .card-content {
@@ -370,8 +356,54 @@
   }
 
   .card-title {
-    font-size: 28px;
-    line-height: 42px;
+    font-size: 32px;
+  }
+
+  .arrow-button {
+    width: 56px;
+    height: 56px;
+    bottom: 28px;
+    right: 32px;
+  }
+
+  .arrow-button.arrow-top {
+    bottom: auto;
+    top: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-cards-section {
+    padding: 40px 16px;
+  }
+
+  .service-cards-section::before {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-card {
+    min-height: 280px;
+    padding: 24px 24px 20px 48px;
+    border-radius: 48px 12px 12px 12px;
+  }
+
+  .card-bottom-text .card-content {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .card-title {
+    font-size: 26px;
   }
 
   .card-image {
@@ -380,24 +412,20 @@
   }
 
   .arrow-button {
-    width: 52px;
-    height: 52px;
-    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    bottom: 20px;
     right: 24px;
   }
 
   .arrow-button.arrow-top {
     bottom: auto;
-    top: 24px;
+    top: 20px;
   }
 
   .arrow-button svg {
     width: 24px;
     height: 24px;
-  }
-
-  .service-card {
-    border-radius: 20px 20px 20px 48px;
   }
 }
 </style>

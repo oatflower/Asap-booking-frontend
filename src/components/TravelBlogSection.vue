@@ -3,20 +3,23 @@
     <div class="blog-container">
       <!-- Section Header -->
       <div class="section-header">
-        <h2 class="section-title">เที่ยวทั่วไทยกับเอเชป</h2>
-      </div>
+        <h2 class="section-title">เที่ยวทั่วไทยกับเอแซ็ป</h2>
 
-      <!-- Filter Tabs -->
-      <div class="filter-tabs">
-        <button
-          v-for="(tab, index) in tabs"
-          :key="index"
-          class="tab-button"
-          :class="{ active: activeTab === tab.value }"
-          @click="activeTab = tab.value"
-        >
-          {{ tab.label }}
-        </button>
+        <!-- Filter Tabs Row -->
+        <div class="filter-tabs-row">
+          <div class="filter-tabs">
+            <button
+              v-for="(tab, index) in mainTabs"
+              :key="index"
+              class="tab-button"
+              :class="{ active: activeTab === tab.value }"
+              @click="activeTab = tab.value"
+            >
+              {{ tab.label }}
+            </button>
+          </div>
+          <button class="view-all-button">ดูบทความทั้งหมด</button>
+        </div>
       </div>
 
       <!-- Blog Cards Grid -->
@@ -30,12 +33,16 @@
             <img :src="blog.image" :alt="blog.title" class="blog-image" />
           </div>
           <div class="card-content">
-            <span class="category-badge">{{ blog.category }}</span>
-            <h3 class="blog-title">{{ blog.title }}</h3>
+            <div class="card-text">
+              <span class="category-badge">{{ blog.category }}</span>
+              <h3 class="blog-title">{{ blog.title }}</h3>
+            </div>
             <div class="blog-meta">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="calendar-icon">
-                <rect x="3" y="4" width="10" height="9" rx="1" stroke="#919EAB" stroke-width="1.5" fill="none"/>
-                <path d="M3 6H13M5 2V4M11 2V4" stroke="#919EAB" stroke-width="1.5" stroke-linecap="round"/>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="calendar-icon" opacity="0.25">
+                <path d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z" stroke="#282727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.6667 1.33333V4" stroke="#282727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.33333 1.33333V4" stroke="#282727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 6.66667H14" stroke="#282727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="blog-date">{{ blog.date }}</span>
             </div>
@@ -51,37 +58,36 @@ import { ref } from 'vue'
 
 const activeTab = ref('bangkok')
 
-const tabs = ref([
+const mainTabs = ref([
   { label: 'กรุงเทพมหานคร', value: 'bangkok' },
   { label: 'กระบี่(หมวดหมู่)', value: 'krabi' },
   { label: 'ภูเก็ต(หมวดหมู่)', value: 'phuket' },
-  { label: 'เชียงใหม่', value: 'chiangmai' },
-  { label: 'ดูบทความทั้งหมด', value: 'all' }
+  { label: 'เชียงใหม่', value: 'chiangmai' }
 ])
 
 const blogs = ref([
   {
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=600&fit=crop',
     category: 'กรุงเทพ',
-    title: '13 ที่เที่ยวกรุงเทพ วัยรุ่น 2568 มีครบ แหล่งช้อป เดินชิล บุ ฟเฟ่ต์ ......',
+    title: '13 ที่เที่ยวกรุงเทพ วัยรุ่น 2568 มีครบ แหล่งช้อป เดินชิล มุม ...',
     date: '05/01/2568'
   },
   {
-    image: 'https://images.unsplash.com/photo-1563492065213-f0e8a469d6f7?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1563492065213-f0e8a469d6f7?w=600&h=600&fit=crop',
     category: 'กรุงเทพ',
-    title: 'รวมพิกัด ที่เที่ยวกรุงเทพ 2025 ตะลุยเมืองให้ตั้ว 3 วัน 2 คืน ไม่ตื....',
+    title: 'รวมพิกัด ที่เที่ยวกรุงเทพ 2025 ตะลุยเมืองให้ฉ่ำ 3 วัน 2 คืน ไม่ต้อง',
     date: '04/01/2568'
   },
   {
-    image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=600&h=600&fit=crop',
     category: 'กรุงเทพ',
-    title: 'ชวนเพื่อนต่างชาติเที่ยวกรุงเทพฯ ที่ไหนดี',
+    title: 'ชวนเพื่อนต่างชาติเที่ยวกรุงเทพฯที่ไหนดี',
     date: '03/01/2568'
   },
   {
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=600&fit=crop',
     category: 'กรุงเทพ',
-    title: '43 จุดเช็คอิน เที่ยวย่านเมืองเก่ากรุงเทพ ตลาดน้อย ท่าเตียน สา....',
+    title: '43 จุดเช็คอิน เที่ยวย่านเมืองเก่ากรุงเทพ ตลาดน้อย ท่าเตียน สาม ...',
     date: '02/01/2568'
   }
 ])
@@ -90,7 +96,7 @@ const blogs = ref([
 <style scoped>
 .travel-blog-section {
   background: white;
-  padding: 80px 0;
+  padding: 48px 0 32px;
   width: 100%;
 }
 
@@ -100,12 +106,13 @@ const blogs = ref([
   padding: 0 200px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
 }
 
 .section-header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .section-title {
@@ -115,38 +122,71 @@ const blogs = ref([
   color: #161c24;
   margin: 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
-  letter-spacing: 0.21px;
+  letter-spacing: 0.5%;
+  line-height: 1.587;
+}
+
+.filter-tabs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
 }
 
 .filter-tabs {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .tab-button {
-  padding: 12px 24px;
-  border-radius: 50px;
+  padding: 4px 20px;
+  height: 56px;
+  border-radius: 12px;
   border: 1px solid #DFE3E8;
-  background: white;
+  background: transparent;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #637381;
+  font-weight: 700;
+  font-size: 20px;
+  color: #161c24;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 .tab-button:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .tab-button.active {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  border-color: #FF6B6B;
-  color: white;
+  background: #FF595A;
+  border-color: #FF595A;
+  color: #F8F8F8;
+}
+
+.view-all-button {
+  padding: 4px 20px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid #DFE3E8;
+  background: transparent;
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #161c24;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
+}
+
+.view-all-button:hover {
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 .blog-grid {
@@ -157,23 +197,22 @@ const blogs = ref([
 
 .blog-card {
   background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #F4F6F8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .blog-card:hover {
-  box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
 
 .card-image {
-  width: 100%;
-  height: 240px;
+  width: 302px;
+  height: 302px;
   overflow: hidden;
-  position: relative;
+  border-radius: 16px;
 }
 
 .blog-image {
@@ -188,42 +227,49 @@ const blogs = ref([
 }
 
 .card-content {
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
+  width: 100%;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
 
 .category-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  background: #F4F6F8;
-  border-radius: 6px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 500;
-  font-size: 13px;
-  color: #637381;
-  width: fit-content;
+  font-weight: 700;
+  font-size: 16px;
+  color: #9C9797;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 .blog-title {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #161c24;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 48px;
 }
 
 .blog-meta {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  width: 100%;
 }
 
 .calendar-icon {
@@ -233,8 +279,10 @@ const blogs = ref([
 .blog-date {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  color: #919EAB;
+  font-size: 16px;
+  color: #837F7F;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 @media (max-width: 1440px) {
@@ -244,6 +292,19 @@ const blogs = ref([
 
   .blog-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .filter-tabs-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 }
 
@@ -256,24 +317,31 @@ const blogs = ref([
     font-size: 36px;
   }
 
+  .tab-button,
+  .view-all-button {
+    font-size: 16px;
+    height: 48px;
+  }
+
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
   .card-image {
-    height: 200px;
+    width: 100%;
+    height: 240px;
   }
 }
 
 @media (max-width: 768px) {
   .travel-blog-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .blog-container {
     padding: 0 20px;
-    gap: 24px;
+    gap: 20px;
   }
 
   .section-title {
@@ -284,10 +352,12 @@ const blogs = ref([
     gap: 8px;
   }
 
-  .tab-button {
-    padding: 10px 20px;
+  .tab-button,
+  .view-all-button {
+    padding: 8px 16px;
     font-size: 14px;
-    border-radius: 50px;
+    height: 40px;
+    border-radius: 8px;
   }
 
   .blog-grid {
@@ -296,15 +366,12 @@ const blogs = ref([
   }
 
   .card-image {
-    height: 180px;
-  }
-
-  .card-content {
-    padding: 16px;
+    width: 100%;
+    height: 200px;
   }
 
   .blog-title {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 </style>

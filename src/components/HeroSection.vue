@@ -10,11 +10,11 @@
           class="carousel-slide"
           :style="{ backgroundImage: `url(${slide.bg})` }"
         >
-          <!-- Radial Gradient Overlay -->
-          <div class="slide-gradient"></div>
+          <!-- Radial Gradient Overlay - Hidden for mockups -->
+          <div v-if="!slide.isMockup" class="slide-gradient"></div>
 
-          <!-- Hero Text -->
-          <div class="hero-text">
+          <!-- Hero Text - Hidden for mockups -->
+          <div v-if="!slide.isMockup" class="hero-text">
             <div class="hero-title-row">
               <span class="hero-title-text">เช่ารถกับ</span>
               <img src="@/assets/images/logo.svg" alt="asap" class="hero-logo" />
@@ -23,21 +23,21 @@
             <p class="hero-subtitle">ราคาเริ่มต้นเพียง 2,000 ฿/วัน</p>
           </div>
 
-          <!-- Car Image -->
-          <img :src="slide.car" :alt="slide.alt" class="hero-car-image" />
+          <!-- Car Image - Hidden for mockups -->
+          <img v-if="!slide.isMockup && slide.car" :src="slide.car" :alt="slide.alt" class="hero-car-image" />
         </div>
       </div>
 
       <!-- Navigation Arrows -->
       <button class="nav-arrow nav-prev" @click="prevSlide">
         <svg viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="11" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.2)"/>
           <path d="M14 8l-4 4 4 4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
       <button class="nav-arrow nav-next" @click="nextSlide">
         <svg viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="11" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.2)"/>
           <path d="M10 8l4 4-4 4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
@@ -173,16 +173,14 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 // Import images
-import heroSlide1 from '@/assets/images/hero-slide-1.png'
-import heroSlide2 from '@/assets/images/hero-slide-2.png'
-import heroCar from '@/assets/images/hero-car.png'
+// Import images
+import heroMockup1 from '@/assets/images/hero-mockup-1.png'
+import heroMockup2 from '@/assets/images/hero-mockup-2.png'
 
 // Carousel data
 const slides = ref([
-  { bg: heroSlide1, car: heroCar, alt: 'Car 1' },
-  { bg: heroSlide2, car: heroCar, alt: 'Car 2' },
-  { bg: heroSlide1, car: heroCar, alt: 'Car 3' },
-  { bg: heroSlide2, car: heroCar, alt: 'Car 4' }
+  { bg: heroMockup1, isMockup: true, alt: 'Promotion 1' },
+  { bg: heroMockup2, isMockup: true, alt: 'Promotion 2' }
 ])
 
 const currentSlide = ref(0)
@@ -355,10 +353,10 @@ onUnmounted(() => {
   background-color: #f8fafb;
   position: relative;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 48px;
 }
 
 .hero-carousel {
@@ -517,14 +515,14 @@ onUnmounted(() => {
 }
 
 .search-container {
-  position: absolute;
-  top: 598px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-top: -48px;
   width: 100%;
   max-width: 1280px;
   padding: 0 20px;
   z-index: 100;
+  display: flex;
+  justify-content: center;
 }
 
 .search-form {

@@ -4,9 +4,7 @@
       <!-- Header -->
       <div class="section-header">
         <div class="header-text">
-          <h2 class="section-title">
-            เพราะเรา<span class="highlight">เข้าใจ</span><br>ทุกความต้องการ
-          </h2>
+          <h2 class="section-title">เพราะเราเข้าใจ<br>ทุกความต้องการ</h2>
           <p class="section-subtitle">ของทุกการเดินทาง</p>
         </div>
         <!-- Logo -->
@@ -36,33 +34,33 @@
             <img :src="uspIcon2" alt="อิสระ" class="feature-icon" />
             <div class="feature-text">
               <h3 class="feature-title">อิสระ ทุกการเดินทาง</h3>
-              <p class="feature-description">เลือกเส้นทางและเวลาตามใจได้อย่างเต็มที่ ด้วยรถเช่าหลากหลายรุ่น ตอบโจทย์ทุกความต้องการ เชื่อมต่อทุกการเดินทางอย่างไร้รอยต่อ</p>
+              <p class="feature-description">เลือกเส้นทางและระยะเวลาเช่าได้เอง ตั้งแต่เช่าระยะสั้น จนถึง เช่าระยะยาว เพื่อประสบการณ์การเดินทางที่ตรงใจ และไร้ความกังวล</p>
             </div>
           </div>
         </div>
 
         <div class="divider"></div>
 
-        <!-- Feature 3: ทุกบาทมีค่า ทุกการเดินทาง -->
+        <!-- Feature 3: ทุกนาทีมีค่า ทุกการเดินทาง -->
         <div class="feature-item">
           <div class="feature-content">
-            <img :src="uspIcon3" alt="ทุกบาทมีค่า" class="feature-icon" />
+            <img :src="uspIcon3" alt="ทุกนาทีมีค่า" class="feature-icon" />
             <div class="feature-text">
-              <h3 class="feature-title">ทุกบาทมีค่า ทุกการเดินทาง</h3>
-              <p class="feature-description">รับประกันราคาดีที่สุด พร้อมโปรโมชันสุดคุ้ม สะสมแต้ม ASC Coin แลกสิทธิประโยชน์มากมาย คุ้มค่าทุกการเช่า</p>
+              <h3 class="feature-title">ทุกนาทีมีค่า ทุกการเดินทาง</h3>
+              <p class="feature-description">เราใส่ใจเวลาของคุณ บริการรวดเร็วและเป็นมืออาชีพ พร้อมให้คุณออกเดินทางทันที และถึงที่หมายตรงเวลา</p>
             </div>
           </div>
         </div>
 
         <div class="divider"></div>
 
-        <!-- Feature 4: อุ่นใจ ทุกการเดินทาง -->
+        <!-- Feature 4: อบอุ่น ทุกการเดินทาง -->
         <div class="feature-item">
           <div class="feature-content">
-            <img :src="uspIcon4" alt="อุ่นใจ" class="feature-icon" />
+            <img :src="uspIcon4" alt="อบอุ่น" class="feature-icon" />
             <div class="feature-text">
-              <h3 class="feature-title">อุ่นใจ ทุกการเดินทาง</h3>
-              <p class="feature-description">เดินทางอย่างมั่นใจด้วยระบบดูแลความปลอดภัย รถทุกคันผ่านการตรวจสอบ พร้อมบริการช่วยเหลือฉุกเฉิน 24 ชั่วโมง</p>
+              <h3 class="feature-title">อบอุ่น ทุุกการเดินทาง</h3>
+              <p class="feature-description">เดินทางอย่างมั่นใจด้วยทีมบริการลูกค้าพร้อมดูแลตลอดเวลา ตั้งแต่การช่วยเลือก รถเช่าที่เหมาะกับคุณ ไปจนถึงการช่วยเหลือฉุกเฉินบนท้องถนน ตลอด 24 ชั่วโมง</p>
             </div>
           </div>
         </div>
@@ -83,9 +81,13 @@ import uspIcon4 from '@/assets/images/usp-icon-4.svg'
   background: #ff595a;
   padding: 48px 160px;
   width: 100%;
+  min-height: 700px;
   position: relative;
   overflow: hidden;
   border-bottom-right-radius: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .why-container {
@@ -113,23 +115,21 @@ import uspIcon4 from '@/assets/images/usp-icon-4.svg'
 .section-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 72px;
   color: white;
   margin: 0;
-  line-height: 1.3;
-}
-
-.section-title .highlight {
-  color: #FFD700;
+  line-height: 1.2;
+  letter-spacing: 0.5%;
 }
 
 .section-subtitle {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 400;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 42px;
   color: white;
   margin: 0;
-  opacity: 0.95;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 .header-logo {
@@ -139,10 +139,9 @@ import uspIcon4 from '@/assets/images/usp-icon-4.svg'
 }
 
 .logo-img {
-  height: 64px;
+  height: 150px;
   width: auto;
   filter: brightness(0) invert(1);
-  opacity: 0.3;
 }
 
 .features-row {

@@ -10,30 +10,35 @@
       <!-- Header with Icon and Info -->
       <div class="coupon-header">
         <div class="icon-circle">
-          <svg viewBox="0 0 29 29" width="29" height="29">
-            <path d="M14.5 2V27M2 14.5H27M21.5 7.5L7.5 21.5M21.5 21.5L7.5 7.5" stroke="#637381" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#637381" stroke-width="2"/>
+            <path d="M8.5 12L11 14.5L16 9.5" stroke="#637381" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="coupon-info">
           <h3 class="coupon-title">{{ title }}</h3>
-          <div class="coupon-meta">
-            <span class="expire-date">{{ expireText }}</span>
-            <div class="countdown" v-if="showCountdown">
-              <svg viewBox="0 0 16 16" width="16" height="16">
-                <circle cx="8" cy="8" r="6" stroke="#ff595a" stroke-width="1.5" fill="none"/>
-                <path d="M8 4V8L10.5 10.5" stroke="#ff595a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              </svg>
-              <span>{{ countdown }}</span>
-            </div>
-          </div>
-          <button class="details-btn">
-            <span>รายละเอียดและเงื่อนไข</span>
-            <svg viewBox="0 0 8 8" width="8" height="8">
-              <path d="M2 1L5 4L2 7" stroke="#161c24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
         </div>
       </div>
+
+      <!-- Meta Info -->
+      <div class="coupon-meta">
+        <span class="expire-date">{{ expireText }}</span>
+        <div class="countdown" v-if="showCountdown">
+          <svg viewBox="0 0 16 16" width="16" height="16">
+            <circle cx="8" cy="8" r="6" stroke="#ff595a" stroke-width="1.5" fill="none"/>
+            <path d="M8 5V8L10 10" stroke="#ff595a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span>{{ countdown }}</span>
+        </div>
+      </div>
+
+      <!-- Details Link -->
+      <button class="details-btn">
+        <span>รายละเอียดและเงื่อนไข</span>
+        <svg viewBox="0 0 8 12" width="8" height="12">
+          <path d="M1.5 1L6.5 6L1.5 11" stroke="#161c24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
 
       <!-- Divider -->
       <div class="divider"></div>
@@ -41,13 +46,14 @@
       <!-- Code and Button -->
       <div class="coupon-actions">
         <div class="code-input">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <rect x="4" y="4" width="16" height="16" rx="2" stroke="#919eab" stroke-width="2" fill="none"/>
-            <path d="M9 9h2v2H9V9zM9 13h6M9 15h6" stroke="#919eab" stroke-width="1.5" stroke-linecap="round"/>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#919eab" stroke-width="1.5"/>
+            <path d="M7 7h4v4H7V7z" stroke="#919eab" stroke-width="1.5"/>
+            <path d="M7 15h10M7 18h7" stroke="#919eab" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
           <span>{{ code }}</span>
         </div>
-        <button class="use-btn">ใช้เลย</button>
+        <button class="use-btn">ใช้คูปอง</button>
       </div>
     </div>
   </div>
@@ -86,35 +92,21 @@ defineProps({
 .coupon-card {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  height: 163px;
+  max-width: 420px;
+  padding-top: 12px;
 }
 
 .badge {
   position: absolute;
-  top: -12px;
-  left: -9px;
+  top: 0;
+  left: 12px;
   height: 32px;
-  padding: 0 12px;
+  padding: 0 16px;
   background: linear-gradient(135deg, #ff595a 0%, #ff7676 100%);
-  border-radius: 4px;
+  border-radius: 8px 8px 0 0;
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(255, 89, 90, 0.3);
   z-index: 10;
-}
-
-.badge::after {
-  content: '';
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 6px solid #ff595a;
-  border-top: 16px solid transparent;
-  border-bottom: 16px solid transparent;
 }
 
 .badge span {
@@ -128,43 +120,25 @@ defineProps({
 .card-content {
   background: white;
   border-radius: 16px;
-  padding: 16px;
-  height: 100%;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  box-shadow: 0px 0px 34.2px -15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -20px;
-  background:
-    radial-gradient(circle at 0% 50%, transparent 10px, white 10px),
-    radial-gradient(circle at 100% 50%, transparent 10px, white 10px);
-  background-size: 50% 100%;
-  background-repeat: no-repeat;
-  background-position: left center, right center;
-  pointer-events: none;
+  gap: 12px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
 }
 
 .coupon-header {
   display: flex;
   gap: 16px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .icon-circle {
-  width: 51px;
-  height: 51px;
-  background: #c4cdd5;
-  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  background: #f4f6f8;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,24 +147,21 @@ defineProps({
 
 .coupon-info {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 .coupon-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  color: #282727;
+  color: #161c24;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .coupon-meta {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -198,26 +169,21 @@ defineProps({
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #4f4d4d;
+  color: #637381;
 }
 
 .countdown {
-  background: #f4f6f8;
+  background: #fff5f5;
   border-radius: 100px;
-  padding: 4px 8px;
+  padding: 6px 12px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  height: 24px;
-}
-
-.countdown svg {
-  opacity: 0.8;
+  gap: 6px;
 }
 
 .countdown span {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
   color: #ff595a;
   white-space: nowrap;
@@ -231,13 +197,13 @@ defineProps({
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  margin-top: 4px;
+  width: fit-content;
 }
 
 .details-btn span {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 14px;
   color: #161c24;
 }
 
@@ -245,22 +211,26 @@ defineProps({
   color: #ff595a;
 }
 
+.details-btn:hover svg path {
+  stroke: #ff595a;
+}
+
 .divider {
   height: 1px;
   width: 100%;
+  margin: 8px 0;
   background: repeating-linear-gradient(
     to right,
-    #282727 0,
-    #282727 5px,
-    transparent 5px,
-    transparent 10px
+    #dfe3e8 0,
+    #dfe3e8 8px,
+    transparent 8px,
+    transparent 16px
   );
-  opacity: 0.2;
 }
 
 .coupon-actions {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -268,22 +238,22 @@ defineProps({
   flex: 1;
   background: #f8f8f8;
   border-radius: 12px;
-  padding: 8px 10px 8px 16px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
 }
 
 .code-input svg {
-  opacity: 0.2;
+  opacity: 0.4;
   flex-shrink: 0;
 }
 
 .code-input span {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 16px;
   color: #161c24;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -294,20 +264,19 @@ defineProps({
   background: #ff595a;
   border: none;
   border-radius: 12px;
-  padding: 0 16px;
-  height: 40px;
+  padding: 12px 24px;
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.2s;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .use-btn:hover {
-  background: #ff4445;
+  background: #e84849;
 }
 
 @media (max-width: 768px) {
@@ -315,12 +284,17 @@ defineProps({
     max-width: 100%;
   }
 
+  .card-content {
+    padding: 20px;
+  }
+
   .coupon-title {
     font-size: 18px;
   }
 
-  .expire-date {
-    font-size: 12px;
+  .use-btn {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 </style>

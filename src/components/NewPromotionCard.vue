@@ -21,6 +21,8 @@ defineProps({
 .promotion-card {
   width: 100%;
   border-radius: 16px;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   overflow: hidden;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -38,6 +40,7 @@ defineProps({
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
 }
 
 @media (max-width: 768px) {

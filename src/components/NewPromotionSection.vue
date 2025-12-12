@@ -1,14 +1,12 @@
 <template>
   <section class="new-promotion-section">
-    <div class="promotion-container">
-      <!-- Section Header -->
-      <div class="section-header">
-        <h2 class="section-title">
-          ลดเฉพาะช่วงนี้ <span class="highlight">คุ้มกว่าเดิม</span>
-        </h2>
-        <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur. Sagittis.</p>
-      </div>
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">ลดเฉพาะช่วงนี้ คุ้มกว่าเดิม</h2>
+      <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur. Sagittis.</p>
+    </div>
 
+    <div class="promotion-container">
       <!-- Promotion Cards Slider -->
       <div class="slider-container">
         <button class="nav-arrow left" @click="prevSlide" :disabled="currentSlide === 0">
@@ -18,12 +16,12 @@
         </button>
 
         <div class="cards-wrapper">
-          <div class="cards-track" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+          <div class="cards-track" :style="{ transform: `translateX(-${currentSlide * (740 + 24)}px)` }">
             <div
               v-for="(promotion, index) in promotions"
               :key="index"
               class="card-slide"
-              :class="{ 'center-card': index % 3 === 1 }"
+              :class="{ 'center-card': index === currentSlide }"
             >
               <NewPromotionCard
                 :imageUrl="promotion.imageUrl"
@@ -52,29 +50,38 @@
 import { ref, computed } from 'vue'
 import NewPromotionCard from './NewPromotionCard.vue'
 
+// Import images
+// Import images
+import promoSeptember from '@/assets/images/figma-promo-1.png'
+import promoMomsDay from '@/assets/images/figma-promo-2.png'
+import promoDeepal from '@/assets/images/figma-promo-3.png'
+import promoNewYear from '@/assets/images/promo-new-year.png'
+import promoSummer from '@/assets/images/promo-summer.png'
+import promoFlashSale from '@/assets/images/promo-flash-sale.png'
+
 const promotions = ref([
   {
-    imageUrl: 'https://via.placeholder.com/400x300/e8f5e9/000000?text=September+Double+Deal',
+    imageUrl: promoSeptember,
     title: 'September Double Deal'
   },
   {
-    imageUrl: 'https://via.placeholder.com/500x350/e3f2fd/000000?text=Mom\'s+Day+Special',
+    imageUrl: promoMomsDay,
     title: 'Mom\'s Day Special'
   },
   {
-    imageUrl: 'https://via.placeholder.com/400x300/fce4ec/000000?text=Deepal+Promotion',
+    imageUrl: promoDeepal,
     title: 'Deepal Promotion'
   },
   {
-    imageUrl: 'https://via.placeholder.com/400x300/f3e5f5/000000?text=New+Year+Deal',
+    imageUrl: promoNewYear,
     title: 'New Year Deal'
   },
   {
-    imageUrl: 'https://via.placeholder.com/500x350/fff3e0/000000?text=Summer+Special',
+    imageUrl: promoSummer,
     title: 'Summer Special'
   },
   {
-    imageUrl: 'https://via.placeholder.com/400x300/e0f2f1/000000?text=Flash+Sale',
+    imageUrl: promoFlashSale,
     title: 'Flash Sale'
   }
 ])
@@ -82,7 +89,7 @@ const promotions = ref([
 const currentSlide = ref(0)
 const visibleCards = 3
 
-const maxSlide = computed(() => Math.ceil(promotions.value.length / visibleCards) - 1)
+const maxSlide = computed(() => promotions.value.length - 1)
 
 const prevSlide = () => {
   if (currentSlide.value > 0) {
@@ -100,17 +107,25 @@ const nextSlide = () => {
 <style scoped>
 .new-promotion-section {
   background: white;
-  padding: 80px 0;
+  padding: 32px 0;
   width: 100%;
+  overflow: hidden;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
 }
 
 .promotion-container {
-  max-width: 1680px;
+  /* max-width: 1440px; Removed for full width */
+  width: 100%;
   margin: 0 auto;
-  padding: 0 200px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
 }
 
 .section-header {
@@ -118,6 +133,7 @@ const nextSlide = () => {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 0 20px;
 }
 
 .section-title {
@@ -126,12 +142,8 @@ const nextSlide = () => {
   font-size: 42px;
   color: #161c24;
   margin: 0;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
-  letter-spacing: 0.21px;
-}
-
-.section-title .highlight {
-  color: #ff595a;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 .section-subtitle {
@@ -140,43 +152,58 @@ const nextSlide = () => {
   font-size: 18px;
   color: #637381;
   margin: 0;
-  letter-spacing: 0.09px;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
 }
 
 .slider-container {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
+  gap: 24px;
   width: 100%;
   position: relative;
+  /* Ensure the slider takes full width for the partial view of side cards */
 }
 
 .cards-wrapper {
-  flex: 1;
+  width: 100%;
+  /* Adjust width to control how much of side cards is visible.
+     Figma shows main card + partial side cards. */
+  /* max-width: 1200px; Removed for full width */
+  width: 100%;
   overflow: hidden;
+  padding: 20px 0; /* Add padding for shadow/hover effects */
 }
 
 .cards-track {
   display: flex;
   gap: 24px;
   transition: transform 0.5s ease-in-out;
+  padding-left: calc(50% - 370px); /* Center the first item: track width / 2 - card width / 2 */
 }
 
 .card-slide {
-  min-width: calc((100% - 48px) / 3);
+  width: 740px; /* Fixed width based on Figma approximation or ratio */
+  min-width: 740px;
+  height: 460px; /* Fixed height for aspect ratio */
   flex-shrink: 0;
   transition: all 0.3s ease;
+  opacity: 0.5; /* Fade out side cards */
+  transform: scale(0.9); /* Shrink side cards */
 }
 
 .card-slide.center-card {
-  transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1);
   z-index: 2;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
 }
 
 .nav-arrow {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid #dfe3e8;
   background: white;
@@ -186,7 +213,8 @@ const nextSlide = () => {
   cursor: pointer;
   transition: all 0.2s;
   color: #637381;
-  flex-shrink: 0;
+  z-index: 10;
+  /* Position arrows outside the track if needed, or keep inline */
 }
 
 .nav-arrow:hover:not(:disabled) {
@@ -197,94 +225,67 @@ const nextSlide = () => {
 .nav-arrow:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+  display: none;
 }
 
 .view-all-container {
   display: flex;
   justify-content: center;
-  padding-top: 16px;
+  padding-top: 20px;
 }
 
 .view-all-btn {
-  padding: 12px 32px;
+  padding: 4px 20px;
+  height: 56px;
   border: 1px solid #dfe3e8;
-  border-radius: 8px;
+  border-radius: 12px;
   background: white;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 20px;
   color: #161c24;
   cursor: pointer;
+  line-height: 1.587;
+  letter-spacing: 0.5%;
   transition: all 0.2s;
 }
 
 .view-all-btn:hover {
-  background: #f8f9fa;
-  border-color: #c4cdd5;
-}
-
-@media (max-width: 1440px) {
-  .promotion-container {
-    padding: 0 100px;
-  }
+  border-color: #FF595A;
+  color: #FF595A;
 }
 
 @media (max-width: 1024px) {
-  .promotion-container {
-    padding: 0 40px;
-  }
-
-  .section-title {
-    font-size: 36px;
-  }
-
-  .section-subtitle {
-    font-size: 16px;
-  }
-
   .card-slide {
-    min-width: calc((100% - 24px) / 2);
+    width: 600px;
+    min-width: 600px;
+    height: 380px;
   }
-
-  .card-slide.center-card {
-    transform: scale(1.05);
+  .cards-track {
+    padding-left: calc(50% - 300px);
   }
 }
 
 @media (max-width: 768px) {
-  .new-promotion-section {
-    padding: 60px 0;
-  }
-
-  .promotion-container {
-    padding: 0 20px;
-    gap: 32px;
-  }
-
-  .section-title {
-    font-size: 28px;
-  }
-
-  .section-subtitle {
-    font-size: 14px;
-  }
-
-  .slider-container {
+  .cards-track {
+    padding-left: 20px; /* formatted for simple scroll on mobile */
     gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
 
   .card-slide {
-    min-width: 100%;
-  }
-
-  .card-slide.center-card {
-    transform: scale(1);
+    width: 85vw;
+    min-width: 85vw;
+    height: auto;
+    aspect-ratio: 16/10;
+    opacity: 1;
+    transform: none;
+    scroll-snap-align: center;
   }
 
   .nav-arrow {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
+    display: none;
   }
 }
 </style>

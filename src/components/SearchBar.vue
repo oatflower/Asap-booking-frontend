@@ -89,6 +89,9 @@ const props = defineProps({
   background: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
   padding: 12px 0;
+  position: sticky;
+  top: 80px;
+  z-index: 100;
 }
 
 .search-bar-container {

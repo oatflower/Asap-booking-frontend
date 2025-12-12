@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <MenuDesktop />
+    <div class="desktop-only">
+      <MenuDesktop />
+    </div>
+    <div class="mobile-only">
+      <MenuMobile />
+    </div>
     <router-view />
     <FooterSection />
   </div>
@@ -8,6 +13,7 @@
 
 <script setup>
 import MenuDesktop from './components/MenuDesktop.vue'
+import MenuMobile from './components/MenuMobile.vue'
 import FooterSection from './components/FooterSection.vue'
 </script>
 
@@ -29,5 +35,23 @@ body {
 #app {
   width: 100%;
   min-height: 100vh;
+}
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .desktop-only {
+    display: none;
+  }
+  
+  .mobile-only {
+    display: block;
+  }
 }
 </style>

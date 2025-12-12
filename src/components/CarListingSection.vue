@@ -18,38 +18,51 @@
         <!-- Filter Button -->
         <div class="filter-group">
           <button class="filter-button">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M2 4h14M5 9h8M8 14h2" stroke="#637381" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
             <span>ตัวกรอง</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="dropdown-icon">
-              <path d="M4 6L8 10L12 6" stroke="#637381" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 6L8 10L12 6" stroke="#454F5B" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
 
           <!-- Active Filters -->
           <div class="active-filters">
             <span class="filter-tag">
-              2-4
+              <!-- User icon -->
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="filter-icon">
+                <path d="M6 6C7.38071 6 8.5 4.88071 8.5 3.5C8.5 2.11929 7.38071 1 6 1C4.61929 1 3.5 2.11929 3.5 3.5C3.5 4.88071 4.61929 6 6 6Z" stroke="#637381" stroke-width="1"/>
+                <path d="M10.5 11C10.5 8.51472 8.48528 6.5 6 6.5C3.51472 6.5 1.5 8.51472 1.5 11" stroke="#637381" stroke-width="1" stroke-linecap="round"/>
+              </svg>
+              <span class="filter-text">2-4</span>
               <button class="remove-filter">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M3 3L9 9M9 3L3 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M3 3L9 9M9 3L3 9" stroke="#637381" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </button>
             </span>
             <span class="filter-tag">
-              ออโต้
+              <!-- Gear/Auto icon -->
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="filter-icon">
+                <rect x="1" y="3" width="3" height="8" rx="0.5" fill="#637381"/>
+                <rect x="4.5" y="1" width="3" height="10" rx="0.5" fill="#637381"/>
+                <rect x="8" y="5" width="3" height="6" rx="0.5" fill="#637381"/>
+              </svg>
+              <span class="filter-text">ออโต้</span>
               <button class="remove-filter">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M3 3L9 9M9 3L3 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M3 3L9 9M9 3L3 9" stroke="#637381" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </button>
             </span>
             <span class="filter-tag">
-              รถป...
+              <!-- Gas pump icon -->
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="filter-icon">
+                <path d="M1.5 10.5V2.5C1.5 1.94772 1.94772 1.5 2.5 1.5H6.5C7.05228 1.5 7.5 1.94772 7.5 2.5V10.5M1.5 10.5H7.5M1.5 10.5H0.5M7.5 10.5H11.5M7.5 5.5H9.5C10.0523 5.5 10.5 5.94772 10.5 6.5V9.5C10.5 10.0523 10.0523 10.5 9.5 10.5" stroke="#637381" stroke-width="1" stroke-linecap="round"/>
+                <rect x="2.5" y="2.5" width="4" height="2" fill="#637381"/>
+              </svg>
+              <span class="filter-text">รถน้ำมัน</span>
               <button class="remove-filter">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M3 3L9 9M9 3L3 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M3 3L9 9M9 3L3 9" stroke="#637381" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </button>
             </span>
@@ -58,9 +71,9 @@
 
         <!-- Sort Dropdown -->
         <div class="sort-dropdown">
-          <label class="sort-label">ตัดให้ดีที่สุด</label>
+          <span class="sort-label">ดีลที่ดีที่สุด</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="dropdown-icon">
-            <path d="M4 6L8 10L12 6" stroke="#637381" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 6L8 10L12 6" stroke="#454F5B" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       </div>
@@ -70,35 +83,71 @@
         <div
           v-for="car in cars"
           :key="car.id"
-          class="car-card"
+          :class="['car-card', { 'card-featured': car.id === 3 }]"
           @click="viewCarDetail(car.id)"
         >
+          <!-- Car Image (positioned absolute on right) -->
+          <div class="car-image-container">
+            <img :src="car.image" :alt="car.model" />
+          </div>
+
+          <!-- Card Content -->
           <div class="card-content">
-            <!-- Left Side: Car Info -->
-            <div class="car-info-left">
+            <div class="car-info">
               <h3 class="car-name">{{ car.model }}</h3>
-
-              <div class="price-section">
-                <div class="current-price">
-                  <span class="currency">฿</span>
-                  <span class="amount">{{ car.price }}</span>
-                  <span class="period">/วัน</span>
-                </div>
-                <div v-if="car.originalPrice" class="original-price">({{ car.originalPrice }} ฿)</div>
+              <div class="price-row">
+                <span class="currency">฿</span>
+                <span class="amount">{{ car.price }}</span>
+                <span class="period">/วัน</span>
               </div>
-
+              <div v-if="car.originalPrice" class="original-price">({{ car.originalPrice }} ฿)</div>
               <div v-if="car.coupon" class="coupon-tag">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="coupon-icon">
-                  <rect x="3" y="6" width="14" height="8" rx="1.5" stroke="#919EAB" stroke-width="1.5" fill="none"/>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="coupon-icon">
+                  <path d="M1 5.5C1 4.67157 1.67157 4 2.5 4H13.5C14.3284 4 15 4.67157 15 5.5V6.5C14.1716 6.5 13.5 7.17157 13.5 8C13.5 8.82843 14.1716 9.5 15 9.5V10.5C15 11.3284 14.3284 12 13.5 12H2.5C1.67157 12 1 11.3284 1 10.5V9.5C1.82843 9.5 2.5 8.82843 2.5 8C2.5 7.17157 1.82843 6.5 1 6.5V5.5Z" stroke="#637381" stroke-width="1" fill="none"/>
                 </svg>
                 <span>{{ car.coupon }}</span>
               </div>
             </div>
+          </div>
 
-            <!-- Right Side: Car Image -->
-            <div class="car-image-right">
-              <img :src="car.image" :alt="car.model" />
-              <div class="asap-badge">asap</div>
+          <!-- Car Specs (only for featured card) -->
+          <div v-if="car.id === 3 && car.specs" class="car-specs">
+            <div class="spec-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M9 9C10.6569 9 12 7.65685 12 6C12 4.34315 10.6569 3 9 3C7.34315 3 6 4.34315 6 6C6 7.65685 7.34315 9 9 9Z" stroke="#637381" stroke-width="1.2"/>
+                <path d="M15 15C15 12.2386 12.3137 10 9 10C5.68629 10 3 12.2386 3 15" stroke="#637381" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <span>{{ car.specs.seats }}</span>
+            </div>
+            <div class="spec-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <rect x="3" y="5" width="9" height="11" rx="1" stroke="#637381" stroke-width="1.2"/>
+                <path d="M6 5V3.5C6 2.67157 6.67157 2 7.5 2C8.32843 2 9 2.67157 9 3.5V5" stroke="#637381" stroke-width="1.2"/>
+                <circle cx="7.5" cy="10" r="1.5" stroke="#637381" stroke-width="1.2"/>
+              </svg>
+              <span>{{ car.specs.luggage }}</span>
+            </div>
+            <div class="spec-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <rect x="2" y="5" width="4" height="10" rx="0.5" fill="#637381"/>
+                <rect x="7" y="3" width="4" height="12" rx="0.5" fill="#637381"/>
+                <rect x="12" y="7" width="4" height="8" rx="0.5" fill="#637381"/>
+              </svg>
+              <span>{{ car.specs.transmission }}</span>
+            </div>
+            <div class="spec-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="7" stroke="#637381" stroke-width="1.2"/>
+                <text x="9" y="12" text-anchor="middle" font-size="7" fill="#637381">cc</text>
+              </svg>
+              <span>{{ car.specs.engine }}</span>
+            </div>
+            <div class="spec-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M2.5 15V4C2.5 3.17157 3.17157 2.5 4 2.5H10C10.8284 2.5 11.5 3.17157 11.5 4V15M2.5 15H11.5M2.5 15H1M11.5 15H17M11.5 8H14C14.8284 8 15.5 8.67157 15.5 9.5V14C15.5 14.8284 14.8284 15.5 14 15.5" stroke="#637381" stroke-width="1.2" stroke-linecap="round"/>
+                <rect x="4" y="4" width="5" height="3" fill="#637381"/>
+              </svg>
+              <span>{{ car.specs.extra }}</span>
             </div>
           </div>
         </div>
@@ -146,68 +195,20 @@
       </div>
     </div>
 
-    <!-- Car Side Panel -->
-    <CarSidePanel
+    <!-- Car Modal -->
+    <CarModal
       :isOpen="showSidePanel"
       :car="selectedCar"
       @close="showSidePanel = false"
     />
 
-    <!-- Why Choose Us Section -->
-    <div class="why-choose-section">
-      <div class="why-choose-container">
-        <h2 class="why-choose-title">เพราะเราเข้าใจ<br />ทุกความต้องการ</h2>
-        <p class="why-choose-subtitle">ของทุกการเดินทาง</p>
-
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                <circle cx="32" cy="32" r="28" fill="white"/>
-                <path d="M32 20v16l8 8" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <p class="feature-text">ปลอดล็อค ทุกการเดินทาง</p>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                <circle cx="32" cy="32" r="28" fill="white"/>
-                <path d="M20 32h24M32 20l12 12-12 12" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <p class="feature-text">อิสระ ทุกการเดินทาง</p>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                <circle cx="32" cy="32" r="28" fill="white"/>
-                <path d="M24 40l8-16 8 16M28 35h8" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <p class="feature-text">คุณภาพที่ดี ทุกการเดินทาง</p>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                <circle cx="32" cy="32" r="28" fill="white"/>
-                <path d="M22 28l10 10 16-16" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <p class="feature-text">อบอุ่น ทุกการเดินทาง</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import CarSidePanel from './CarSidePanel.vue'
+import CarModal from './CarModal.vue'
+import carImage from '../assets/images/car-listing-toyota.png'
 
 const selectedCategory = ref('all')
 const sortBy = ref('price-low')
@@ -241,7 +242,7 @@ const cars = ref([
     model: 'TOYOTA YARIS CROSS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -256,7 +257,7 @@ const cars = ref([
     model: 'TOYOTA ALTIS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -271,7 +272,7 @@ const cars = ref([
     model: 'TOYOTA ALTIS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -286,7 +287,7 @@ const cars = ref([
     model: 'TOYOTA ALTIS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -301,7 +302,7 @@ const cars = ref([
     model: 'TOYOTA YARIS CROSS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -316,7 +317,7 @@ const cars = ref([
     model: 'TOYOTA ALTIS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -331,7 +332,7 @@ const cars = ref([
     model: 'TOYOTA YARIS CROSS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -346,7 +347,7 @@ const cars = ref([
     model: 'TOYOTA ALTIS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -361,7 +362,7 @@ const cars = ref([
     model: 'TOYOTA YARIS CROSS 1.2 CC : BKK',
     price: '800',
     originalPrice: '1,099',
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=300&fit=crop',
+    image: carImage,
     coupon: 'NEWUSER10',
     specs: {
       seats: '4',
@@ -391,35 +392,35 @@ const cars = ref([
 .category-tabs {
   display: flex;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  padding: 0 24px 8px 24px;
 }
 
 .category-tab {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #637381;
-  background: white;
-  border: 1px solid #DFE3E8;
-  border-radius: 8px;
-  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5858;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  padding: 0 16px;
+  height: 40px;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
 }
 
 .category-tab:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  color: #FF595A;
 }
 
 .category-tab.active {
-  background: #FF6B6B;
-  border-color: #FF6B6B;
-  color: white;
-  font-weight: 600;
+  background: white;
+  color: #FF595A;
+  font-weight: 700;
+  box-shadow: 0px 0px 22.4px -11px rgba(0, 0, 0, 0.1);
 }
 
 /* Filters Bar */
@@ -434,7 +435,7 @@ const cars = ref([
 .filter-group {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   flex: 1;
 }
 
@@ -442,20 +443,19 @@ const cars = ref([
   display: flex;
   align-items: center;
   gap: 8px;
-  background: white;
-  border: 1px solid #DFE3E8;
-  border-radius: 8px;
-  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  padding: 16px 14px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #637381;
+  font-size: 16px;
+  font-weight: 700;
+  color: #454F5B;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .filter-button:hover {
-  border-color: #FF6B6B;
+  color: #FF595A;
 }
 
 .active-filters {
@@ -468,14 +468,25 @@ const cars = ref([
 .filter-tag {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: #F4F6F8;
-  border: 1px solid #DFE3E8;
-  border-radius: 6px;
-  padding: 6px 10px;
+  gap: 4px;
+  background: #F8F8F8;
+  border: none;
+  border-radius: 100px;
+  padding: 0 8px;
+  height: 24px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 13px;
-  color: #637381;
+  font-size: 12px;
+  color: #000000;
+}
+
+.filter-icon {
+  opacity: 0.5;
+}
+
+.filter-text {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 12px;
+  color: #000000;
 }
 
 .remove-filter {
@@ -486,35 +497,34 @@ const cars = ref([
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #919EAB;
-  transition: color 0.2s;
+  opacity: 0.5;
+  transition: opacity 0.2s;
 }
 
 .remove-filter:hover {
-  color: #FF6B6B;
+  opacity: 1;
 }
 
 .sort-dropdown {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: white;
-  padding: 10px 16px;
-  border: 1px solid #DFE3E8;
-  border-radius: 8px;
+  background: transparent;
+  border: none;
+  padding: 16px 14px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .sort-dropdown:hover {
-  border-color: #FF6B6B;
+  color: #FF595A;
 }
 
 .sort-label {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #161c24;
+  font-size: 16px;
+  font-weight: 700;
+  color: #454F5B;
   white-space: nowrap;
 }
 
@@ -531,130 +541,148 @@ const cars = ref([
 }
 
 .car-card {
+  position: relative;
   background: white;
   border-radius: 16px;
-  border: 2px solid transparent;
-  overflow: hidden;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid transparent;
+  overflow: visible;
+  box-shadow: 0px 3px 12.5px 2px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   cursor: pointer;
+  min-height: 191px;
 }
 
 .car-card:hover {
-  border-color: #FF6B6B;
-  box-shadow: 0px 4px 16px rgba(255, 107, 107, 0.15);
+  box-shadow: 0px 4px 16px rgba(255, 89, 90, 0.15);
 }
 
-.card-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding: 32px;
-  min-height: 280px;
+.car-card.card-featured {
+  min-height: auto;
 }
 
-/* Left Side - Car Info */
-.car-info-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.car-name {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #000000;
-  margin: 0 0 24px 0;
-  line-height: 1.3;
-}
-
-.price-section {
-  margin-bottom: auto;
-}
-
-.current-price {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.currency {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  color: #FF4842;
-}
-
-.amount {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  color: #FF4842;
-  line-height: 1;
-}
-
-.period {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  color: #C4C4C4;
-}
-
-.original-price {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #C4C4C4;
-  text-decoration: line-through;
-}
-
-.coupon-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: auto;
-}
-
-.coupon-icon {
-  flex-shrink: 0;
-  opacity: 0.4;
-}
-
-.coupon-tag span {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #6B6B6B;
-}
-
-/* Right Side - Car Image */
-.car-image-right {
-  position: relative;
+/* Car Image Container */
+.car-image-container {
+  position: absolute;
+  right: 0;
+  top: 23px;
+  width: 240px;
+  height: 168px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.car-image-right img {
+.car-image-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
 }
 
-.asap-badge {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  color: white;
+.card-content {
+  padding: 16px 16px 0 16px;
+  min-height: 170px;
+  position: relative;
+  z-index: 1;
+}
+
+.car-info {
+  display: flex;
+  flex-direction: column;
+  gap: -8px;
+  max-width: 50%;
+}
+
+.car-name {
   font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+  line-height: 1.587;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: -8px;
+}
+
+.currency {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #FF595A;
+}
+
+.amount {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 24px;
   font-weight: 700;
-  padding: 8px 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(255, 107, 107, 0.3);
+  color: #FF595A;
+  line-height: 1.587;
+}
+
+.period {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ADA9A9;
+}
+
+.original-price {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #D2CFCF;
+  text-decoration: line-through;
+  margin-top: -8px;
+}
+
+.coupon-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.coupon-icon {
+  flex-shrink: 0;
+  opacity: 0.25;
+}
+
+.coupon-tag span {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #4F4D4D;
+}
+
+/* Car Specs */
+.car-specs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: none;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-item svg {
+  opacity: 0.5;
+}
+
+.spec-item span {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #454F5B;
 }
 
 /* Pagination */
@@ -662,37 +690,47 @@ const cars = ref([
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
 }
 
 .items-per-page {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  padding: 8px 0;
 }
 
 .items-select {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #161c24;
+  font-size: 16px;
+  font-weight: 400;
+  color: #161C24;
   background: white;
-  border: 1px solid #DFE3E8;
-  border-radius: 6px;
-  padding: 8px 12px;
+  border: 1px solid #E5E3E3;
+  border-radius: 12px;
+  padding: 16px 14px;
   cursor: pointer;
   outline: none;
+  min-width: 60px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%23637381' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
 }
 
 .items-label {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  color: #637381;
+  font-size: 16px;
+  font-weight: 400;
+  color: #161C24;
 }
 
 .page-numbers {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 24px;
+  padding: 8px 0;
 }
 
 .page-arrow {
@@ -702,20 +740,19 @@ const cars = ref([
   align-items: center;
   justify-content: center;
   background: white;
-  border: 1px solid #DFE3E8;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
-  color: #637381;
+  color: #161C24;
 }
 
 .page-arrow:hover:not(:disabled) {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  color: #FF595A;
 }
 
 .page-arrow:disabled {
-  opacity: 0.3;
+  color: #C4CDD5;
   cursor: not-allowed;
 }
 
@@ -726,93 +763,32 @@ const cars = ref([
   align-items: center;
   justify-content: center;
   background: white;
-  border: 1px solid #DFE3E8;
+  border: none;
   border-radius: 8px;
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #637381;
+  font-size: 16px;
+  font-weight: 400;
+  color: #161C24;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .page-number:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  color: #FF595A;
 }
 
 .page-number.active {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  border-color: #FF6B6B;
+  background: #FF595A;
   color: white;
+  font-weight: 700;
 }
 
 .page-dots {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 14px;
-  color: #637381;
-  padding: 0 4px;
-}
-
-/* Why Choose Us Section */
-.why-choose-section {
-  background: linear-gradient(135deg, #FF7E7E 0%, #FF6B6B 100%);
-  padding: 60px 0;
-  border-top-right-radius: 80px;
-}
-
-.why-choose-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 32px;
-  text-align: center;
-}
-
-.why-choose-title {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.why-choose-subtitle {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  color: white;
-  margin: 8px 0 48px 0;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-}
-
-.feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-text {
-  font-family: 'Sukhumvit Set', sans-serif;
   font-size: 16px;
-  font-weight: 500;
-  color: white;
-  margin: 0;
-  text-align: center;
+  font-weight: 400;
+  color: #161C24;
+  padding: 0;
 }
 
 @media (max-width: 1024px) {
@@ -820,76 +796,77 @@ const cars = ref([
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .card-content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px;
+  .car-image-container {
+    width: 180px;
+    height: 126px;
+    top: 30px;
   }
 
-  .car-name {
-    font-size: 20px;
-  }
-
-  .amount {
-    font-size: 24px;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .car-info {
+    max-width: 60%;
   }
 }
 
 @media (max-width: 768px) {
   .category-tabs {
     overflow-x: scroll;
+    padding: 0 16px 8px 16px;
   }
 
   .filters-bar {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+  }
+
+  .filter-group {
+    flex-wrap: wrap;
   }
 
   .car-grid {
     grid-template-columns: 1fr;
   }
 
+  .car-card {
+    min-height: 160px;
+  }
+
+  .car-image-container {
+    width: 160px;
+    height: 112px;
+    top: 24px;
+  }
+
+  .car-info {
+    max-width: 50%;
+  }
+
   .card-content {
-    padding: 20px;
+    padding: 12px 12px 0 12px;
+    min-height: 140px;
+  }
+
+  .car-specs {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
   }
 
   .car-name {
-    font-size: 18px;
-    margin-bottom: 16px;
-  }
-
-  .currency {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .amount {
-    font-size: 24px;
-  }
-
-  .period {
-    font-size: 18px;
-  }
-
-  .original-price {
-    font-size: 14px;
-  }
-
-  .coupon-tag span {
-    font-size: 14px;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    font-size: 20px;
   }
 
   .pagination {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .page-numbers {
+    gap: 12px;
   }
 }
 </style>

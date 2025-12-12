@@ -84,13 +84,14 @@ const carImage = computed(() => {
 
 .car-count {
   font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 16px;
   color: black;
   opacity: 0.7;
   margin: 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
-  letter-spacing: 0.08px;
+  letter-spacing: 0.5%;
+  line-height: 1.587;
 }
 
 .category-name {
@@ -100,7 +101,8 @@ const carImage = computed(() => {
   color: black;
   margin: 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
-  letter-spacing: 0.1px;
+  letter-spacing: 0.5%;
+  line-height: 1.587;
 }
 
 .card-body {

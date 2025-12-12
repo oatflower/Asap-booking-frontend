@@ -1,8 +1,5 @@
 <template>
   <section class="promotion-section">
-    <!-- Decorative SVG Background -->
-    <div class="wave-bg"></div>
-
     <div class="promotion-container">
       <!-- Section Header -->
       <div class="section-header">
@@ -21,6 +18,16 @@
           :showCountdown="coupon.showCountdown"
           :code="coupon.code"
         />
+      </div>
+
+      <!-- View More Button -->
+      <div class="view-more-wrapper">
+        <button class="view-more-btn">
+          <span>ดูโปรโมชั่นเพิ่มเติม</span>
+          <svg viewBox="0 0 8 12" width="8" height="12">
+            <path d="M1.5 1L6.5 6L1.5 11" stroke="#FF595A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </section>
@@ -63,37 +70,10 @@ const coupons = ref([
   background: #f8fafb;
   position: relative;
   padding: 64px 0;
-  overflow: hidden;
-}
-
-.wave-bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 171px;
-  background: linear-gradient(180deg, transparent 0%, rgba(255, 89, 90, 0.03) 100%);
-  pointer-events: none;
-}
-
-.wave-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: repeating-linear-gradient(
-    to right,
-    rgba(255, 89, 90, 0.1) 0,
-    rgba(255, 89, 90, 0.1) 20px,
-    transparent 20px,
-    transparent 40px
-  );
 }
 
 .promotion-container {
-  max-width: 1280px;
+  max-width: 1680px;
   margin: 0 auto;
   padding: 0 200px;
   display: flex;
@@ -102,26 +82,50 @@ const coupons = ref([
 }
 
 .section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
+  text-align: center;
 }
 
 .section-title {
   font-family: 'Sukhumvit Set', sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 42px;
   color: #161c24;
   margin: 0;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
 }
 
 .coupons-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
   justify-items: center;
+}
+
+.view-more-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.view-more-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: opacity 0.2s;
+}
+
+.view-more-btn span {
+  font-family: 'Sukhumvit Set', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #FF595A;
+}
+
+.view-more-btn:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 1440px) {
@@ -130,14 +134,20 @@ const coupons = ref([
   }
 }
 
+@media (max-width: 1200px) {
+  .coupons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
 @media (max-width: 1024px) {
   .promotion-container {
     padding: 0 40px;
   }
 
-  .coupons-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+  .section-title {
+    font-size: 36px;
   }
 }
 
@@ -157,6 +167,10 @@ const coupons = ref([
   .coupons-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .view-more-btn span {
+    font-size: 16px;
   }
 }
 </style>

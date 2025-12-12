@@ -10,7 +10,7 @@
 
       <!-- Logo -->
       <div class="logo">
-        <span class="logo-text">asap</span>
+        <img src="@/assets/images/logo.svg" alt="asap" />
       </div>
 
       <!-- Navigation Menu -->
@@ -200,7 +200,7 @@
           <!-- Sidebar Header -->
           <div class="sidebar-header">
             <div class="sidebar-logo">
-              <span class="logo-text">asap</span>
+              <img src="@/assets/images/logo.svg" alt="asap" style="height: 28px;" />
             </div>
             <button class="close-button" @click="showSidebar = false">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -415,12 +415,9 @@ const vClickOutside = {
   flex-shrink: 0;
 }
 
-.logo-text {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  color: #ff595a;
-  line-height: 1;
+.logo img {
+  height: 100%;
+  width: auto;
 }
 
 /* Navigation Menu */
@@ -704,9 +701,9 @@ const vClickOutside = {
   transform: translateY(-8px);
 }
 
-/* Hamburger Button */
+/* Hamburger Button - Hidden on desktop */
 .hamburger-button {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -757,12 +754,7 @@ const vClickOutside = {
   flex-shrink: 0;
 }
 
-.sidebar-logo .logo-text {
-  font-family: 'Sukhumvit Set', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  color: #ff595a;
-}
+
 
 .close-button {
   display: flex;
